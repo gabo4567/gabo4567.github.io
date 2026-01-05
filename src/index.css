@@ -1,4 +1,6 @@
 :root {
+  /* Tamaño base de fuente más grande para todo el sitio */
+  font-size: 18px;
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;

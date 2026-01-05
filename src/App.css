@@ -5,19 +5,29 @@
   box-sizing: border-box;
 }
 
-/* Tipografía y fondo general */
+/* Layout general centrado */
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: #f5f5f5;
+  font-family: inherit;
+  background-color: #ffffff;
   color: #222;
   line-height: 1.6;
+
+  display: flex;                 /* 👈 CLAVE */
+  justify-content: center;       /* 👈 CLAVE */
 }
 
 /* Contenedor principal */
-div {
+.container {
+  width: 100%;
   max-width: 900px;
-  margin: 0 auto;
-  padding: 2rem 1.5rem;
+  padding: calc(2.5rem + 56px) 1.5rem 2.5rem 1.5rem;
+  text-align: center;
+}
+
+/* Asegurar que el banner y el contenido tomen la misma fuente global */
+.top-banner,
+.container {
+  font-family: inherit;
 }
 
 /* Header */
@@ -45,12 +55,17 @@ section h2 {
   margin-bottom: 1rem;
   border-bottom: 2px solid #ddd;
   padding-bottom: 0.3rem;
+  display: inline-block;
 }
 
 /* Listas */
 ul {
-  list-style: disc;
-  margin-left: 1.5rem;
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  margin-bottom: 0.4rem;
 }
 
 /* Proyectos */
@@ -69,7 +84,8 @@ article p {
 
 /* Separador */
 hr {
-  margin: 2rem 0;
+  margin: 2rem auto;
+  width: 60%;
   border: none;
   border-top: 1px solid #ccc;
 }

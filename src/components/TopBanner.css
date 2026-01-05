@@ -1,0 +1,32 @@
+.top-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.22);
+  color: #ffffff;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 1000;
+  padding: 0 1rem;
+}
+
+.top-banner p {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 500;
+}
+
+@media (max-width: 480px) {
+  .top-banner {
+    height: 48px;
+  }
+
+  .top-banner p {
+    font-size: 1.05rem;
+  }
+}
