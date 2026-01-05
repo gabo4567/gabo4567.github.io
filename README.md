@@ -98,39 +98,39 @@ El script deploy publica la carpeta dist/ a GitHub Pages usando gh-pages. El hom
 ---
 
 ## 🏗️ Arquitectura y Flujo
-SPA React organizada en componentes funcionales y reutilizables.
+1- SPA React organizada en componentes funcionales y reutilizables.
 
-Comunicación entre componentes vía props.
+2- Comunicación entre componentes vía props.
 
-Build y bundling optimizados con Vite.
+3- Build y bundling optimizados con Vite.
 
-ESLint configurado para mantener consistencia de código.
+4- ESLint configurado para mantener consistencia de código.
 
-Despliegue automatizado con gh-pages.
+5- Despliegue automatizado con gh-pages.
 
 ---
 
 ## 🔧 Buenas Prácticas
-Accesibilidad: verificar roles ARIA y contraste.
+- Accesibilidad: verificar roles ARIA y contraste.
 
-SEO básico: meta tags y Open Graph en index.html.
+- SEO básico: meta tags y Open Graph en index.html.
 
-Performance: imágenes optimizadas (webp, responsive).
+- Performance: imágenes optimizadas (webp, responsive).
 
-Mantenimiento: considerar mover datos de proyectos a src/data/projects.json para fácil edición.
+- Mantenimiento: considerar mover datos de proyectos a src/data/projects.json para fácil edición.
 
-Tests: pruebas end-to-end ligeras opcionales (Playwright, snapshots visuales).
+- Tests: pruebas end-to-end ligeras opcionales (Playwright, snapshots visuales).
 
-CI/CD: GitHub Actions opcionales para lint y build antes de deploy.
+- CI/CD: GitHub Actions opcionales para lint y build antes de deploy.
 
 ---
 
 ## 💡 Mejoras Futuras
-Formulario de contacto con backend o EmailJS.
+- Formulario de contacto con backend o EmailJS.
 
-Automatizar deploy con GitHub Actions (build → deploy).
+- Automatizar deploy con GitHub Actions (build → deploy).
 
-Mejorar SEO y optimización de assets.
+- Mejorar SEO y optimización de assets.
 
 ---
 
