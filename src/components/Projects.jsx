@@ -1,3 +1,27 @@
+import React from 'react';
+import ProjectCarousel from './ProjectCarousel';
+import l1 from '../assets/lotes/Captura de pantalla 2026-01-13 181113.png';
+import l2 from '../assets/lotes/Captura de pantalla 2026-01-13 181156.png';
+import l3 from '../assets/lotes/Captura de pantalla 2026-01-13 181226.png';
+import l4 from '../assets/lotes/Captura de pantalla 2026-01-13 181313.png';
+import l5 from '../assets/lotes/Captura de pantalla 2026-01-13 181650.png';
+
+const lotesImages = [l1, l2, l3, l4, l5];
+import e1 from '../assets/ecommerce/Captura de pantalla 2026-01-13 193039.png';
+import e2 from '../assets/ecommerce/Captura de pantalla 2026-01-13 193111.png';
+import e3 from '../assets/ecommerce/Captura de pantalla 2026-01-13 193301.png';
+import e4 from '../assets/ecommerce/Captura de pantalla 2026-01-13 193319.png';
+import e5 from '../assets/ecommerce/Captura de pantalla 2026-01-13 193518.png';
+
+const ecommerceImages = [e1, e2, e3, e4, e5];
+import c1 from '../assets/clinica/clinica1.jpg';
+import c2 from '../assets/clinica/clinica2.jpg';
+import c3 from '../assets/clinica/clinica3.jpg';
+import c4 from '../assets/clinica/clinica4.jpg';
+import c5 from '../assets/clinica/clinica5.jpg';
+
+const clinicaImages = [c1, c2, c3, c4, c5];
+
 function Projects() {
   return (
     <section>
@@ -15,6 +39,8 @@ function Projects() {
         <p><strong>Tecnologías:</strong> React, React Native, Firebase, JavaScript</p>
 
         <p><strong>Rol:</strong> Desarrollo full stack, modelado de datos, lógica de negocio, validaciones y diseño de interfaces.</p>
+
+        <ProjectCarousel images={lotesImages} altPrefix="IPT captura" />
       </article>
 
       <hr />
@@ -38,6 +64,8 @@ function Projects() {
         </ul>
 
         <p><strong>Rol:</strong> Desarrollo de backend con Python/Django, integración de microservicios, diseño y despliegue de arquitectura modular, pruebas funcionales y puesta en marcha de servicios.</p>
+
+        <ProjectCarousel images={ecommerceImages} altPrefix="E-commerce captura" />
       </article>
 
       <hr />
@@ -52,6 +80,8 @@ function Projects() {
         <p><strong>Tecnologías:</strong> Kotlin Multiplatform, Compose Desktop, JSON REST API, MySQL</p>
 
         <p><strong>Rol:</strong> Desarrollo de interfaz de usuario, consumo de servicios REST, implementación de lógica de gestión y pruebas de funcionalidades completas.</p>
+
+        <ProjectCarousel images={clinicaImages} altPrefix="Clínica captura" />
       </article>
     </section>
   )
