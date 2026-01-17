@@ -2,7 +2,7 @@ import React from 'react';
 import ProjectCarousel from './ProjectCarousel';
 import l1 from '../assets/lotes/Captura de pantalla 2026-01-13 181113.png';
 import l2 from '../assets/lotes/Captura de pantalla 2026-01-13 181156.png';
-import l3 from '../assets/lotes/Captura de pantalla 2026-01-13 181226.png';
+import l3 from '../assets/lotes/Captura de pantalla 2026-01-03 090744.png';
 import l4 from '../assets/lotes/Captura de pantalla 2026-01-13 181313.png';
 import l5 from '../assets/lotes/Captura de pantalla 2026-01-13 181650.png';
 
@@ -28,7 +28,7 @@ function Projects() {
       <h2>Proyectos</h2>
 
       <article>
-        <h3>Sistema de Gestión de Lotes y Turnos para Productores de Tabaco (IPT)</h3>
+        <h3>🌱 Sistema de Gestión de Lotes y Turnos para Productores de Tabaco (IPT)</h3>
 
         <p>Sistema desarrollado para el Instituto Provincial del Tabaco, destinado a la gestión integral de productores, lotes y turnos de atención.</p>
 
@@ -46,7 +46,7 @@ function Projects() {
       <hr />
 
       <article>
-        <h3>E-commerce Integrador P4</h3>
+        <h3>🛒 E-commerce Integrador P4</h3>
 
         <p>Proyecto de e-commerce desarrollado como Trabajo Práctico Integrador de la materia Programación IV, combinando funcionalidades de gestión de usuarios, productos y pedidos con prácticas modernas de desarrollo full stack. Incluye autenticación con JWT y comunicación en tiempo real, además de estructura para microservicios de IA, despliegue con Docker y buenas prácticas de ingeniería.</p>
 
@@ -71,15 +71,19 @@ function Projects() {
       <hr />
 
       <article>
-        <h3>Clínica Salud Total – Aplicación de Escritorio</h3>
+        <h3>📱 Clínica Salud Total – Aplicación Mobile</h3>
 
-        <p>Aplicación de escritorio desarrollada para la gestión administrativa de una clínica, con enfoque en la atención de pacientes, turnos, disponibilidad médica e informes. La interfaz está construida con Kotlin Multiplatform + Compose Desktop y se comunica con una API RESTful en Java Spring Boot para operaciones y persistencia de datos.</p>
+        <p>Aplicación mobile nativa desarrollada en Kotlin con Android Studio para la gestión de turnos médicos de la clínica Salud Total.</p>
+
+        <p>La app implementa una arquitectura MVVM, se conecta a una API RESTful externa mediante Retrofit, maneja autenticación con JWT y permite realizar operaciones CRUD completas sobre entidades del sistema.</p>
+
+        <p>El proyecto aplica buenas prácticas de desarrollo mobile, incluyendo validaciones de formularios, manejo de estados y almacenamiento local de datos usando SharedPreferences.</p>
 
         <p>🔗 Repositorio: <a href="https://github.com/gabo4567/Clinica-ST-Mobile" target="_blank" rel="noopener noreferrer">https://github.com/gabo4567/Clinica-ST-Mobile</a></p>
 
-        <p><strong>Tecnologías:</strong> Kotlin Multiplatform, Compose Desktop, JSON REST API, MySQL</p>
+        <p><strong>Tecnologías:</strong> Kotlin, Android Studio, MVVM, ViewBinding, Retrofit, Coroutines, SharedPreferences, RecyclerView</p>
 
-        <p><strong>Rol:</strong> Desarrollo de interfaz de usuario, consumo de servicios REST, implementación de lógica de gestión y pruebas de funcionalidades completas.</p>
+        <p><strong>Rol:</strong> Desarrollo completo de la aplicación mobile, incluyendo arquitectura, interfaz de usuario, consumo de API REST, autenticación y funcionalidades CRUD.</p>
 
         <ProjectCarousel images={clinicaImages} altPrefix="Clínica captura" />
       </article>
