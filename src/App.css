@@ -1,3 +1,32 @@
+/* Variables de tema */
+:root[data-theme='light'] {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8f9fa;
+  --text-primary: #222222;
+  --text-secondary: #555555;
+  --text-tertiary: #888888;
+  --border-color: #e0e0e0;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --accent-color: #0a66c2;
+  --toggle-bg: #f0f0f0;
+  --section-border: #ddd;
+  --card-bg: #ffffff;
+}
+
+:root[data-theme='dark'] {
+  --bg-primary: #1a1a1a;
+  --bg-secondary: #2d2d2d;
+  --text-primary: #e8e8e8;
+  --text-secondary: #b0b0b0;
+  --text-tertiary: #888888;
+  --border-color: #404040;
+  --shadow-color: rgba(0, 0, 0, 0.3);
+  --accent-color: #4a9eff;
+  --toggle-bg: #2d2d2d;
+  --section-border: #404040;
+  --card-bg: #2d2d2d;
+}
+
 /* Reset básico */
 * {
   margin: 0;
@@ -8,12 +37,13 @@
 /* Layout general centrado */
 body {
   font-family: inherit;
-  background-color: #ffffff;
-  color: #222;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
   line-height: 1.6;
 
-  display: flex;                 /* 👈 CLAVE */
-  justify-content: center;       /* 👈 CLAVE */
+  display: flex;
+  justify-content: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Contenedor principal */
@@ -35,14 +65,38 @@ header {
   margin-bottom: 3rem;
 }
 
+/* Foto de presentación */
+.profile-photo {
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.profile-photo img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px var(--shadow-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 3px solid var(--border-color);
+}
+
+.profile-photo img:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 16px var(--shadow-color);
+}
+
 header h1 {
   font-size: 2.2rem;
   margin-bottom: 0.5rem;
+  color: var(--text-primary);
 }
 
 header p {
   font-size: 1.1rem;
-  color: #555;
+  color: var(--text-secondary);
 }
 
 /* Secciones */
@@ -53,9 +107,10 @@ section {
 section h2 {
   font-size: 1.6rem;
   margin-bottom: 1rem;
-  border-bottom: 2px solid #ddd;
+  border-bottom: 2px solid var(--section-border);
   padding-bottom: 0.3rem;
   display: inline-block;
+  color: var(--text-primary);
 }
 
 /* Listas */
@@ -66,6 +121,7 @@ ul {
 
 ul li {
   margin-bottom: 0.4rem;
+  color: var(--text-secondary);
 }
 
 /* Proyectos */
@@ -76,10 +132,12 @@ article {
 article h3 {
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
+  color: var(--text-primary);
 }
 
 article p {
   margin-bottom: 0.5rem;
+  color: var(--text-secondary);
 }
 
 /* Separador */
@@ -87,15 +145,17 @@ hr {
   margin: 2rem auto;
   width: 60%;
   border: none;
-  border-top: 1px solid #ccc;
+  border-top: 1px solid var(--border-color);
 }
 
 /* Links */
 a {
-  color: #0a66c2;
+  color: var(--accent-color);
   text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 a:hover {
   text-decoration: underline;
+  opacity: 0.8;
 }
