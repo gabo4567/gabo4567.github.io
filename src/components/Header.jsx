@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import ProfilePhotoLightbox from './ProfilePhotoLightbox'
+import DownloadCVButton from './DownloadCVButton'
 import presentacionImg from '../assets/presentacion.jpg'
 
 function Header() {
@@ -24,6 +25,7 @@ function Header() {
         Desarrollo aplicaciones web y móviles, con foco en soluciones
         reales y proyectos académicos y profesionales.
       </p>
+      <DownloadCVButton />
     </header>
   )
 }

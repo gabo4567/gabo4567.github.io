@@ -3,7 +3,6 @@ function Contact() {
     <section>
       <h2>Contacto</h2>
       <p>📧 Email: gabrielparedok@gmail.com</p>
-      <p>📱 WhatsApp: +54 9 3777 814327</p>
       <p>
         🐙 GitHub: <a href="https://github.com/gabo4567">github.com/gabo4567</a>
       </p>
