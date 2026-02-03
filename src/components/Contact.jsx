@@ -8,7 +8,7 @@ function Contact() {
       </p>
       <p>
         🔗 LinkedIn:{' '}
-        <a href="https://www.linkedin.com/in/juan-gabriel-pared-63aa91384/">
+        <a href="https://www.linkedin.com/in/juan-g-pared">
           Perfil de LinkedIn
         </a>
       </p>

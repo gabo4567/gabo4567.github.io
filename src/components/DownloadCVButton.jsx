@@ -4,8 +4,8 @@ import './DownloadCVButton.css'
 function DownloadCVButton() {
   const handleDownload = () => {
     const link = document.createElement('a')
-    link.href = new URL('../assets/CV.jpg', import.meta.url).href
-    link.download = 'Juan_Gabriel_Pared_Developer_CV.jpg'
+    link.href = new URL('../assets/CV.pdf', import.meta.url).href
+    link.download = 'Juan_Gabriel_Pared_Developer_CV.pdf'
     document.body.appendChild(link)
     link.click()
     document.body.removeChild(link)
@@ -30,7 +30,7 @@ function DownloadCVButton() {
           <polyline points="7 10 12 15 17 10"></polyline>
           <line x1="12" y1="15" x2="12" y2="3"></line>
         </svg>
-        <span>Descargar CV</span>
+        <span>Descargar CV (PDF)</span>
       </button>
     </div>
   )
