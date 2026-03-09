@@ -24,7 +24,7 @@ const clinicaImages = [c1, c2, c3, c4, c5];
 
 function Projects() {
   return (
-    <section>
+    <section id="projects">
       <h2>Proyectos</h2>
 
       <article>

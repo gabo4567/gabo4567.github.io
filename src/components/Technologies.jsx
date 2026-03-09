@@ -1,6 +1,6 @@
 function Technologies() {
   return (
-    <section>
+    <section id="technologies">
       <h2>Tecnologías</h2>
       <ul>
         <li>Java · Programación Orientada a Objetos</li>

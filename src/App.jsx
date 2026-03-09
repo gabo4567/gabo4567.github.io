@@ -4,7 +4,8 @@ import About from './components/About'
 import Technologies from './components/Technologies'
 import Projects from './components/Projects'
 import Contact from './components/Contact'
-import TopBanner from './components/TopBanner'
+import Navbar from './components/Navbar'
+import Footer from './components/Footer'
 import ThemeToggle from './components/ThemeToggle'
 import './App.css'
 
@@ -29,7 +30,7 @@ function App() {
 
   return (
     <>
-      <TopBanner />
+      <Navbar />
       <ThemeToggle theme={theme} onThemeChange={handleThemeChange} />
       <div className="container">
         <Header />
@@ -38,6 +39,7 @@ function App() {
         <Projects />
         <Contact />
       </div>
+      <Footer />
     </>
   )
 }

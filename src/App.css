@@ -34,6 +34,11 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 70px; /* Compensación para scroll suave con navbar fija */
+}
+
 /* Layout general centrado */
 body {
   font-family: inherit;
@@ -50,12 +55,11 @@ body {
 .container {
   width: 100%;
   max-width: 900px;
-  padding: calc(2.5rem + 56px) 1.5rem 2.5rem 1.5rem;
+  padding: calc(2.5rem + 60px) 1.5rem 2.5rem 1.5rem;
   text-align: center;
 }
 
-/* Asegurar que el banner y el contenido tomen la misma fuente global */
-.top-banner,
+/* Asegurar que el contenido tome la misma fuente global */
 .container {
   font-family: inherit;
 }
@@ -70,7 +74,7 @@ header {
   margin-bottom: 1.5rem;
   display: flex;
   justify-content: center;
-  cursor: pointer;
+  /* Eliminamos cursor: pointer del contenedor */
 }
 
 .profile-photo img {
@@ -81,6 +85,7 @@ header {
   box-shadow: 0 4px 12px var(--shadow-color);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   border: 3px solid var(--border-color);
+  cursor: pointer; /* Movemos cursor: pointer a la imagen */
 }
 
 .profile-photo img:hover {

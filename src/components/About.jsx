@@ -1,6 +1,6 @@
 function About() {
   return (
-    <section>
+    <section id="about">
       <h2>Sobre mí</h2>
       <p>
         Soy Técnico Universitario en Programación, egresado de la UTN.

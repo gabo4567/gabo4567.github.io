@@ -8,8 +8,12 @@ function Header() {
 
   return (
     <header>
-      <div className="profile-photo" onClick={() => setShowLightbox(true)}>
-        <img src={presentacionImg} alt="Foto de presentación de Juan Gabriel Pared" />
+      <div className="profile-photo">
+        <img 
+          src={presentacionImg} 
+          alt="Foto de presentación de Juan Gabriel Pared" 
+          onClick={() => setShowLightbox(true)}
+        />
       </div>
       {showLightbox && (
         <ProfilePhotoLightbox 

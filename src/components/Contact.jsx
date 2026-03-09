@@ -1,6 +1,6 @@
 function Contact() {
   return (
-    <section>
+    <section id="contact">
       <h2>Contacto</h2>
       <p>📧 Email: gabrielparedok@gmail.com</p>
       <p>
