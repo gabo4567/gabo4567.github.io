@@ -1,5 +1,8 @@
-import React from 'react';
-import ProjectCarousel from './ProjectCarousel';
+import { useMemo, useState } from 'react';
+import FeaturedProjectsCarousel from './FeaturedProjectsCarousel';
+import FeaturedProjectCard from './FeaturedProjectCard';
+import FeaturedProjectModal from './FeaturedProjectModal';
+import './FeaturedProjects.css';
 import l1 from '../assets/lotes/Captura de pantalla 2026-01-13 181113.png';
 import l2 from '../assets/lotes/Captura de pantalla 2026-01-13 181156.png';
 import l3 from '../assets/lotes/Captura de pantalla 2026-01-03 090744.png';
@@ -22,71 +25,174 @@ import c5 from '../assets/clinica/clinica5.jpg';
 
 const clinicaImages = [c1, c2, c3, c4, c5];
 
-function Projects() {
+function Projects({ language = 'es' }) {
+  const labels =
+    language === 'en'
+      ? { title: 'Featured Projects' }
+      : { title: 'Proyectos Destacados' };
+
+  const projects = useMemo(
+    () => [
+      {
+        id: 'ipt',
+        title: '🌱 Sistema de Gestión de Lotes y Turnos para Productores de Tabaco (IPT)',
+        status: 'in_progress',
+        startDate: { es: 'OCT 2025 - Actualidad', en: 'Oct 2025 - Present' },
+        repoUrl: 'https://github.com/gabo4567/sistema-lotes',
+        demoUrl: null,
+        images: lotesImages,
+        previewAlt: { es: 'IPT captura', en: 'IPT screenshot' },
+        modalAlt: { es: 'IPT captura', en: 'IPT screenshot' },
+        shortDescription: {
+          en: 'System developed for Instituto Provincial del Tabaco, focused on the full management of producers, plots, and appointment slots.',
+          es: 'Sistema desarrollado para el Instituto Provincial del Tabaco, destinado a la gestión integral de productores, lotes y turnos de atención.'
+        },
+        fullDescription: {
+          en: [
+            'System developed for Instituto Provincial del Tabaco, focused on the full management of producers, plots, and appointment slots.',
+            'It includes a web app for administrators and a mobile app for producers, enabling data organization, production records, and efficient appointment management.'
+          ],
+          es: [
+            'Sistema desarrollado para el Instituto Provincial del Tabaco, destinado a la gestión integral de productores, lotes y turnos de atención.',
+            'Incluye una aplicación web para administradores y una aplicación móvil para productores, permitiendo organizar información, registrar datos productivos y gestionar turnos de forma eficiente.'
+          ]
+        },
+        technologies: {
+          en: ['React', 'React Native', 'Firebase', 'JavaScript'],
+          es: ['React', 'React Native', 'Firebase', 'JavaScript']
+        },
+        role: {
+          en: 'Full stack development, data modeling, business logic, validations, and UI design.',
+          es: 'Desarrollo full stack, modelado de datos, lógica de negocio, validaciones y diseño de interfaces.'
+        }
+      },
+      {
+        id: 'ecommerce',
+        title: '🛒 E-commerce Integrador P4',
+        status: 'in_progress',
+        startDate: { es: 'SEP 2025 - Actualidad', en: 'Sep 2025 - Present' },
+        repoUrl: 'https://github.com/gabo4567/ecommerce-integrador-p4',
+        demoUrl: null,
+        images: ecommerceImages,
+        previewAlt: { es: 'E-commerce captura', en: 'E-commerce screenshot' },
+        modalAlt: { es: 'E-commerce captura', en: 'E-commerce screenshot' },
+        shortDescription: {
+          en: 'E-commerce project developed as an integrative assignment for Programming IV, combining user/product/order management with modern full stack practices. It includes JWT authentication, real-time communication, an AI microservice structure, Docker deployment, and solid engineering practices.',
+          es: 'Proyecto de e-commerce desarrollado como Trabajo Práctico Integrador de la materia Programación IV, combinando funcionalidades de gestión de usuarios, productos y pedidos con prácticas modernas de desarrollo full stack. Incluye autenticación con JWT y comunicación en tiempo real, además de estructura para microservicios de IA, despliegue con Docker y buenas prácticas de ingeniería.'
+        },
+        fullDescription: {
+          en: [
+            'E-commerce project developed as an integrative assignment for Programming IV, combining user/product/order management with modern full stack practices. It includes JWT authentication, real-time communication, an AI microservice structure, Docker deployment, and solid engineering practices.'
+          ],
+          es: [
+            'Proyecto de e-commerce desarrollado como Trabajo Práctico Integrador de la materia Programación IV, combinando funcionalidades de gestión de usuarios, productos y pedidos con prácticas modernas de desarrollo full stack. Incluye autenticación con JWT y comunicación en tiempo real, además de estructura para microservicios de IA, despliegue con Docker y buenas prácticas de ingeniería.'
+          ]
+        },
+        technologies: {
+          en: [
+            'Python / Django backend (REST API)',
+            'FastAPI (AI microservice)',
+            'PostgreSQL',
+            'Node.js / Express',
+            'Firebase',
+            'Docker, CI/CD (GitHub Actions)'
+          ],
+          es: [
+            'Backend Python / Django (REST API)',
+            'FastAPI (microservicio IA)',
+            'PostgreSQL',
+            'Node.js / Express',
+            'Firebase',
+            'Docker, CI/CD (GitHub Actions)'
+          ]
+        },
+        role: {
+          en: 'Backend development with Python/Django, microservice integration, modular architecture design and deployment, functional testing, and service rollout.',
+          es: 'Desarrollo de backend con Python/Django, integración de microservicios, diseño y despliegue de arquitectura modular, pruebas funcionales y puesta en marcha de servicios.'
+        }
+      },
+      {
+        id: 'clinica',
+        title: '📱 Clínica Salud Total – Aplicación Mobile',
+        status: 'in_progress',
+        startDate: { es: 'JUN 2025 - Actualidad', en: 'Jun 2025 - Present' },
+        repoUrl: 'https://github.com/gabo4567/Clinica-ST-Mobile',
+        demoUrl: null,
+        images: clinicaImages,
+        previewAlt: { es: 'Clínica captura', en: 'Clinic screenshot' },
+        modalAlt: { es: 'Clínica captura', en: 'Clinic screenshot' },
+        shortDescription: {
+          en: 'Native mobile app developed in Kotlin with Android Studio to manage medical appointments for Clínica Salud Total.',
+          es: 'Aplicación mobile nativa desarrollada en Kotlin con Android Studio para la gestión de turnos médicos de la clínica Salud Total.'
+        },
+        fullDescription: {
+          en: [
+            'Native mobile app developed in Kotlin with Android Studio to manage medical appointments for Clínica Salud Total.',
+            'The app follows an MVVM architecture, connects to an external RESTful API via Retrofit, handles JWT authentication, and supports full CRUD operations on system entities.',
+            'The project applies mobile development best practices, including form validations, state management, and local storage using SharedPreferences.'
+          ],
+          es: [
+            'Aplicación mobile nativa desarrollada en Kotlin con Android Studio para la gestión de turnos médicos de la clínica Salud Total.',
+            'La app implementa una arquitectura MVVM, se conecta a una API RESTful externa mediante Retrofit, maneja autenticación con JWT y permite realizar operaciones CRUD completas sobre entidades del sistema.',
+            'El proyecto aplica buenas prácticas de desarrollo mobile, incluyendo validaciones de formularios, manejo de estados y almacenamiento local de datos usando SharedPreferences.'
+          ]
+        },
+        technologies: {
+          en: [
+            'Kotlin',
+            'Android Studio',
+            'MVVM',
+            'ViewBinding',
+            'Retrofit',
+            'Coroutines',
+            'SharedPreferences',
+            'RecyclerView'
+          ],
+          es: [
+            'Kotlin',
+            'Android Studio',
+            'MVVM',
+            'ViewBinding',
+            'Retrofit',
+            'Coroutines',
+            'SharedPreferences',
+            'RecyclerView'
+          ]
+        },
+        role: {
+          en: 'End-to-end mobile app development, including architecture, UI, REST API consumption, authentication, and CRUD features.',
+          es: 'Desarrollo completo de la aplicación mobile, incluyendo arquitectura, interfaz de usuario, consumo de API REST, autenticación y funcionalidades CRUD.'
+        }
+      }
+    ],
+    []
+  );
+
+  const [openId, setOpenId] = useState(null);
+  const openProject = projects.find((p) => p.id === openId) || null;
+
   return (
-    <section id="projects">
-      <h2>Proyectos</h2>
+    <section id="projects" className="featured-projects">
+      <h2>{labels.title}</h2>
+      <FeaturedProjectsCarousel language={language}>
+        {projects.map((project) => (
+          <FeaturedProjectCard
+            key={project.id}
+            project={project}
+            language={language}
+            onMore={setOpenId}
+          />
+        ))}
+      </FeaturedProjectsCarousel>
 
-      <article>
-        <h3>🌱 Sistema de Gestión de Lotes y Turnos para Productores de Tabaco (IPT)</h3>
-
-        <p>Sistema desarrollado para el Instituto Provincial del Tabaco, destinado a la gestión integral de productores, lotes y turnos de atención.</p>
-
-        <p>Incluye una aplicación web para administradores y una aplicación móvil para productores, permitiendo organizar información, registrar datos productivos y gestionar turnos de forma eficiente.</p>
-
-        <p>🔗 Repositorio: <a href="https://github.com/gabo4567/sistema-lotes" target="_blank" rel="noopener noreferrer">https://github.com/gabo4567/sistema-lotes</a></p>
-
-        <p><strong>Tecnologías:</strong> React, React Native, Firebase, JavaScript</p>
-
-        <p><strong>Rol:</strong> Desarrollo full stack, modelado de datos, lógica de negocio, validaciones y diseño de interfaces.</p>
-
-        <ProjectCarousel images={lotesImages} altPrefix="IPT captura" />
-      </article>
-
-      <hr />
-
-      <article>
-        <h3>🛒 E-commerce Integrador P4</h3>
-
-        <p>Proyecto de e-commerce desarrollado como Trabajo Práctico Integrador de la materia Programación IV, combinando funcionalidades de gestión de usuarios, productos y pedidos con prácticas modernas de desarrollo full stack. Incluye autenticación con JWT y comunicación en tiempo real, además de estructura para microservicios de IA, despliegue con Docker y buenas prácticas de ingeniería.</p>
-
-        <p>🔗 Repositorio: <a href="https://github.com/gabo4567/ecommerce-integrador-p4" target="_blank" rel="noopener noreferrer">https://github.com/gabo4567/ecommerce-integrador-p4</a></p>
-
-        <p><strong>Tecnologías:</strong></p>
-        <ul>
-          <li>Backend Python / Django (REST API)</li>
-          <li>FastAPI (microservicio IA)</li>
-          <li>PostgreSQL, MongoDB</li>
-          <li>Node.js / Express</li>
-          <li>Socket.IO</li>
-          <li>Firebase Realtime Database</li>
-          <li>Docker, CI/CD (GitHub Actions)</li>
-        </ul>
-
-        <p><strong>Rol:</strong> Desarrollo de backend con Python/Django, integración de microservicios, diseño y despliegue de arquitectura modular, pruebas funcionales y puesta en marcha de servicios.</p>
-
-        <ProjectCarousel images={ecommerceImages} altPrefix="E-commerce captura" />
-      </article>
-
-      <hr />
-
-      <article>
-        <h3>📱 Clínica Salud Total – Aplicación Mobile</h3>
-
-        <p>Aplicación mobile nativa desarrollada en Kotlin con Android Studio para la gestión de turnos médicos de la clínica Salud Total.</p>
-
-        <p>La app implementa una arquitectura MVVM, se conecta a una API RESTful externa mediante Retrofit, maneja autenticación con JWT y permite realizar operaciones CRUD completas sobre entidades del sistema.</p>
-
-        <p>El proyecto aplica buenas prácticas de desarrollo mobile, incluyendo validaciones de formularios, manejo de estados y almacenamiento local de datos usando SharedPreferences.</p>
-
-        <p>🔗 Repositorio: <a href="https://github.com/gabo4567/Clinica-ST-Mobile" target="_blank" rel="noopener noreferrer">https://github.com/gabo4567/Clinica-ST-Mobile</a></p>
-
-        <p><strong>Tecnologías:</strong> Kotlin, Android Studio, MVVM, ViewBinding, Retrofit, Coroutines, SharedPreferences, RecyclerView</p>
-
-        <p><strong>Rol:</strong> Desarrollo completo de la aplicación mobile, incluyendo arquitectura, interfaz de usuario, consumo de API REST, autenticación y funcionalidades CRUD.</p>
-
-        <ProjectCarousel images={clinicaImages} altPrefix="Clínica captura" />
-      </article>
+      {openProject && (
+        <FeaturedProjectModal
+          key={openProject.id}
+          project={openProject}
+          language={language}
+          onClose={() => setOpenId(null)}
+        />
+      )}
     </section>
   )
 }

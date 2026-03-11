@@ -2,9 +2,24 @@ import React, { useState, useEffect } from 'react';
 import ImageLightbox from './ImageLightbox';
 import './ProjectCarousel.css';
 
-const ProjectCarousel = ({ images = [], altPrefix = 'Imagen' }) => {
+const ProjectCarousel = ({ images = [], altPrefix, language = 'es' }) => {
   const [index, setIndex] = useState(0);
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
+
+  const labels =
+    language === 'en'
+      ? {
+          altPrefix: altPrefix || 'Screenshot',
+          prev: 'Previous',
+          next: 'Next',
+          goTo: 'Go to image'
+        }
+      : {
+          altPrefix: altPrefix || 'Imagen',
+          prev: 'Anterior',
+          next: 'Siguiente',
+          goTo: 'Ir a imagen'
+        };
 
   useEffect(() => {
     if (!images || images.length === 0) return;
@@ -21,11 +36,11 @@ const ProjectCarousel = ({ images = [], altPrefix = 'Imagen' }) => {
     <>
       <div className="project-carousel" aria-roledescription="carousel">
         <div className="carousel-inner">
-          <button className="carousel-btn prev" onClick={prev} aria-label="Anterior">‹</button>
+          <button className="carousel-btn prev" onClick={prev} aria-label={labels.prev}>‹</button>
           <div className="carousel-image-wrap" onClick={() => setIsLightboxOpen(true)}>
-            <img src={images[index]} alt={`${altPrefix} ${index + 1}`} />
+            <img src={images[index]} alt={`${labels.altPrefix} ${index + 1}`} />
           </div>
-          <button className="carousel-btn next" onClick={next} aria-label="Siguiente">›</button>
+          <button className="carousel-btn next" onClick={next} aria-label={labels.next}>›</button>
         </div>
         <div className="carousel-dots" role="tablist">
           {images.map((_, i) => (
@@ -33,7 +48,7 @@ const ProjectCarousel = ({ images = [], altPrefix = 'Imagen' }) => {
               key={i}
               className={`dot ${i === index ? 'active' : ''}`}
               onClick={() => setIndex(i)}
-              aria-label={`Ir a imagen ${i + 1}`}
+              aria-label={`${labels.goTo} ${i + 1}`}
               aria-selected={i === index}
             />
           ))}
@@ -44,6 +59,8 @@ const ProjectCarousel = ({ images = [], altPrefix = 'Imagen' }) => {
           images={images}
           initialIndex={index}
           onClose={() => setIsLightboxOpen(false)}
+          language={language}
+          altPrefix={labels.altPrefix}
         />
       )}
     </>

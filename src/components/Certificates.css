@@ -1,0 +1,204 @@
+.certificates-grid {
+  width: 100%;
+  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.certificate-card {
+  position: relative;
+  width: 100%;
+  border-radius: 18px;
+  border: 1px solid var(--border-color);
+  background: linear-gradient(135deg, rgba(128, 128, 128, 0.06), rgba(128, 128, 128, 0.02));
+  box-shadow: 0 10px 26px var(--shadow-color);
+  overflow: hidden;
+  text-align: center;
+  cursor: pointer;
+  padding: 1.05rem 1.05rem 1.15rem;
+  display: grid;
+  gap: 0.9rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  will-change: transform;
+}
+
+.certificate-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 40px var(--shadow-color);
+  border-color: var(--accent-color);
+}
+
+.certificate-preview {
+  width: 100%;
+  height: 340px;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.certificate-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.certificate-title {
+  color: var(--text-primary);
+  font-weight: 800;
+  font-size: 0.98rem;
+  line-height: 1.35;
+}
+
+.certificate-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.72);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  z-index: 1300;
+  animation: certificateFade 0.18s ease-out;
+}
+
+@keyframes certificateFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.certificate-modal-overlay.closing {
+  animation: certificateFadeOut 0.18s ease-in forwards;
+}
+
+@keyframes certificateFadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.certificate-modal {
+  width: 100%;
+  max-width: 980px;
+  max-height: none;
+  border-radius: 0;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+  position: relative;
+  overflow: visible;
+  animation: certificatePop 0.18s ease-out;
+}
+
+@keyframes certificatePop {
+  from {
+    transform: translateY(10px) scale(0.985);
+  }
+  to {
+    transform: translateY(0) scale(1);
+  }
+}
+
+.certificate-modal.closing {
+  animation: certificatePopOut 0.18s ease-in forwards;
+}
+
+@keyframes certificatePopOut {
+  from {
+    transform: translateY(0) scale(1);
+  }
+  to {
+    transform: translateY(10px) scale(0.985);
+  }
+}
+
+.certificate-modal-close {
+  position: absolute;
+  top: -16px;
+  right: -16px;
+  width: 46px;
+  height: 46px;
+  border-radius: 999px;
+  border: 0;
+  background: rgba(0, 0, 0, 0.55);
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
+  z-index: 3;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.certificate-modal-close:hover {
+  transform: translateY(-1px) scale(1.02);
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.certificate-modal-body {
+  padding: 0;
+  position: relative;
+}
+
+.certificate-modal-preview {
+  width: 100%;
+  height: 78vh;
+  border: 1px solid var(--border-color);
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem;
+}
+
+.certificate-modal-preview img {
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+  object-fit: contain;
+}
+
+@media (max-width: 768px) {
+  .certificates-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .certificate-preview {
+    height: 290px;
+  }
+
+  .certificate-modal-body {
+    padding: 0;
+  }
+
+  .certificate-modal-preview {
+    height: 72vh;
+  }
+
+  .certificate-modal-close {
+    top: -14px;
+    right: -14px;
+    width: 44px;
+    height: 44px;
+  }
+}

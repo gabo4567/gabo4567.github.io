@@ -1,20 +1,18 @@
 /* Theme Toggle Button */
 .theme-toggle {
-  position: fixed;
-  top: 80px;
-  right: 20px;
-  width: 50px;
-  height: 50px;
+  position: static;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
   border: 2px solid var(--border-color);
   background-color: var(--toggle-bg);
   color: var(--text-primary);
-  font-size: 24px;
+  font-size: 20px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 999;
+  z-index: 1;
   transition: all 0.3s ease;
   box-shadow: 0 2px 8px var(--shadow-color);
 }
@@ -30,10 +28,8 @@
 
 @media (max-width: 480px) {
   .theme-toggle {
-    top: 70px;
-    right: 10px;
-    width: 45px;
-    height: 45px;
-    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
   }
 }

@@ -3,10 +3,10 @@ import Header from './components/Header'
 import About from './components/About'
 import Technologies from './components/Technologies'
 import Projects from './components/Projects'
-import Contact from './components/Contact'
+import Education from './components/Education'
+import Certificates from './components/Certificates'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
-import ThemeToggle from './components/ThemeToggle'
 import './App.css'
 
 function App() {
@@ -28,18 +28,34 @@ function App() {
     setTheme(newTheme)
   }
 
+  const [language, setLanguage] = useState(() => {
+    const saved = localStorage.getItem('language')
+    if (saved === 'es' || saved === 'en') return saved
+    return 'es'
+  })
+
+  useEffect(() => {
+    localStorage.setItem('language', language)
+    document.documentElement.lang = language
+  }, [language])
+
   return (
     <>
-      <Navbar />
-      <ThemeToggle theme={theme} onThemeChange={handleThemeChange} />
+      <Navbar
+        theme={theme}
+        onThemeChange={handleThemeChange}
+        language={language}
+        onLanguageChange={setLanguage}
+      />
       <div className="container">
-        <Header />
-        <About />
-        <Technologies />
-        <Projects />
-        <Contact />
+        <Header language={language} />
+        <About language={language} />
+        <Projects language={language} />
+        <Technologies language={language} />
+        <Education language={language} />
+        <Certificates language={language} />
       </div>
-      <Footer />
+      <Footer language={language} />
     </>
   )
 }

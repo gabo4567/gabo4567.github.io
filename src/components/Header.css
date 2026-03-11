@@ -1,0 +1,147 @@
+.hero {
+  margin-bottom: 3rem;
+}
+
+.hero-inner {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1.35fr 0.65fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.hero-content {
+  text-align: left;
+}
+
+.hero-title {
+  font-size: 3.1rem;
+  line-height: 1.05;
+  margin-bottom: 0.75rem;
+  color: var(--text-primary);
+}
+
+.hero-subtitle {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.9rem;
+}
+
+.hero-location {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.85rem;
+  font-size: 0.98rem;
+}
+
+.hero-pin {
+  transform: translateY(1px);
+}
+
+.hero-links {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin-bottom: 1.1rem;
+}
+
+.hero-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+  background: rgba(128, 128, 128, 0.06);
+  transition: transform 0.25s ease, border-color 0.25s ease, color 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.hero-icon:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+  background-color: var(--accent-soft);
+  box-shadow: 0 10px 22px var(--shadow-color);
+}
+
+.hero-description {
+  font-size: 1.02rem;
+  color: var(--text-secondary);
+  max-width: 56ch;
+}
+
+.hero-actions {
+  margin-top: 1.25rem;
+}
+
+.hero-actions .download-cv-container {
+  justify-content: flex-start;
+  margin: 0;
+}
+
+.hero-photo {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.hero-photo-img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid var(--border-color);
+  box-shadow: 0 10px 26px var(--shadow-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  display: block;
+  cursor: default;
+}
+
+.hero-photo-img:hover {
+  transform: scale(1.06);
+  box-shadow: 0 16px 36px var(--shadow-color);
+  border-color: var(--accent-color);
+}
+
+@media (max-width: 900px) {
+  .hero-inner {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+
+  .hero-content {
+    text-align: center;
+  }
+
+  .hero-links,
+  .hero-location {
+    justify-content: center;
+  }
+
+  .hero-description {
+    margin: 0 auto;
+  }
+
+  .hero-actions .download-cv-container {
+    justify-content: center;
+  }
+
+  .hero-photo {
+    justify-content: center;
+    order: -1;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2.3rem;
+  }
+
+  .hero-photo-img {
+    width: 240px;
+    height: 240px;
+  }
+}
