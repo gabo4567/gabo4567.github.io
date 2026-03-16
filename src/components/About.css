@@ -81,4 +81,13 @@
   .about-card {
     padding: 1.4rem 1.25rem;
   }
+
+  .about-list {
+    gap: 0.9rem;
+  }
+
+  .about-item {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
 }

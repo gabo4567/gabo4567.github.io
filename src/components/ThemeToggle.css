@@ -26,6 +26,18 @@
   transform: scale(0.95);
 }
 
+.theme-toggle.navbar-theme-toggle {
+  border: 1px solid var(--project-cta-border);
+  background: var(--project-cta-bg);
+  color: #f4f8fc;
+  box-shadow: 0 8px 20px var(--shadow-color);
+}
+
+.theme-toggle.navbar-theme-toggle:hover {
+  background: var(--accent-color);
+  color: #ffffff;
+}
+
 @media (max-width: 480px) {
   .theme-toggle {
     width: 40px;

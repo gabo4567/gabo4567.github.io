@@ -6,6 +6,7 @@ export default function Certificates({ language = 'es' }) {
     return {
       title: language === 'en' ? 'Certificates' : 'Certificados',
       close: language === 'en' ? 'Close' : 'Cerrar',
+      swipe: language === 'en' ? 'Swipe' : 'Desliza',
       items: [
         {
           id: 'codo-a-codo',
@@ -80,6 +81,11 @@ export default function Certificates({ language = 'es' }) {
             <div className="certificate-title">{item.title}</div>
           </button>
         ))}
+      </div>
+
+      <div className="certificates-swipe-hint" aria-hidden="true">
+        <span className="certificates-swipe-line"></span>
+        <span className="certificates-swipe-text">{content.swipe}</span>
       </div>
 
       {openItem && (

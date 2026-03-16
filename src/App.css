@@ -1,22 +1,7 @@
 /* Variables de tema */
-:root[data-theme='light'] {
-  --bg-primary: #ffffff;
-  --bg-secondary: #f8f9fa;
-  --text-primary: #222222;
-  --text-secondary: #555555;
-  --text-tertiary: #888888;
-  --border-color: #e0e0e0;
-  --shadow-color: rgba(0, 0, 0, 0.1);
-  --accent-color: #0a66c2;
-  --accent-soft: rgba(10, 102, 194, 0.10);
-  --toggle-bg: #f0f0f0;
-  --section-border: #ddd;
-  --card-bg: #ffffff;
-}
-
-:root[data-theme='dark'] {
-  --bg-primary: #1a1a1a;
-  --bg-secondary: #2d2d2d;
+:root {
+  --bg-primary: #101418;
+  --bg-secondary: #151b21;
   --text-primary: #e8e8e8;
   --text-secondary: #b0b0b0;
   --text-tertiary: #888888;
@@ -27,6 +12,137 @@
   --toggle-bg: #2d2d2d;
   --section-border: #404040;
   --card-bg: #2d2d2d;
+  --section-card-bg: linear-gradient(180deg, rgba(18, 27, 38, 0.96) 0%, rgba(24, 36, 51, 0.98) 100%);
+  --section-card-border: rgba(110, 140, 176, 0.24);
+  --section-card-soft: rgba(76, 110, 149, 0.12);
+  --section-card-icon: rgba(78, 112, 150, 0.14);
+  --project-cta-bg: linear-gradient(180deg, rgba(31, 45, 62, 0.98) 0%, rgba(39, 56, 77, 0.98) 100%);
+  --project-cta-border: rgba(110, 140, 176, 0.26);
+  --project-modal-bg: linear-gradient(180deg, rgba(15, 24, 34, 0.99) 0%, rgba(21, 33, 47, 0.99) 100%);
+  --project-modal-topbar-bg: linear-gradient(135deg, rgba(33, 51, 72, 0.88), rgba(24, 38, 55, 0.82));
+  --bg-gradient-base: linear-gradient(160deg, #0d1318 0%, #121922 42%, #1a2230 100%);
+  --bg-gradient-depth: radial-gradient(circle at 12% 12%, rgba(88, 112, 138, 0.14) 0%, rgba(88, 112, 138, 0) 58%),
+    radial-gradient(circle at 86% 20%, rgba(63, 83, 106, 0.12) 0%, rgba(63, 83, 106, 0) 56%),
+    radial-gradient(circle at 48% 88%, rgba(40, 58, 79, 0.12) 0%, rgba(40, 58, 79, 0) 62%);
+  --bg-grid-lines: repeating-linear-gradient(
+      90deg,
+      rgba(145, 165, 188, 0.08) 0,
+      rgba(145, 165, 188, 0.08) 1px,
+      transparent 1px,
+      transparent 120px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      rgba(145, 165, 188, 0.06) 0,
+      rgba(145, 165, 188, 0.06) 1px,
+      transparent 1px,
+      transparent 120px
+    );
+  --bg-diagonal-lines: repeating-linear-gradient(
+    155deg,
+    rgba(132, 152, 176, 0.06) 0,
+    rgba(132, 152, 176, 0.06) 1px,
+    transparent 1px,
+    transparent 210px
+  );
+}
+
+:root[data-theme='light'] {
+  --bg-primary: #f4f6f8;
+  --bg-secondary: #e9edf1;
+  --text-primary: #222222;
+  --text-secondary: #555555;
+  --text-tertiary: #888888;
+  --border-color: #e0e0e0;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --accent-color: #0a66c2;
+  --accent-soft: rgba(10, 102, 194, 0.10);
+  --toggle-bg: #f0f0f0;
+  --section-border: #ddd;
+  --card-bg: #ffffff;
+  --section-card-bg: linear-gradient(180deg, rgba(236, 242, 248, 0.98) 0%, rgba(223, 232, 242, 0.98) 100%);
+  --section-card-border: rgba(69, 95, 125, 0.18);
+  --section-card-soft: rgba(62, 92, 126, 0.07);
+  --section-card-icon: rgba(62, 92, 126, 0.08);
+  --project-cta-bg: linear-gradient(180deg, rgba(214, 225, 236, 0.98) 0%, rgba(203, 216, 230, 0.98) 100%);
+  --project-cta-border: rgba(69, 95, 125, 0.2);
+  --project-modal-bg: linear-gradient(180deg, rgba(232, 240, 247, 0.99) 0%, rgba(221, 231, 242, 0.99) 100%);
+  --project-modal-topbar-bg: linear-gradient(135deg, rgba(212, 225, 239, 0.92), rgba(223, 233, 243, 0.84));
+
+  --bg-gradient-base: linear-gradient(160deg, #f6f8fa 0%, #e7ecf1 45%, #dbe2e9 100%);
+  --bg-gradient-depth: radial-gradient(circle at 15% 15%, rgba(75, 92, 112, 0.08) 0%, rgba(75, 92, 112, 0) 55%),
+    radial-gradient(circle at 88% 22%, rgba(50, 68, 87, 0.06) 0%, rgba(50, 68, 87, 0) 52%),
+    radial-gradient(circle at 52% 85%, rgba(30, 45, 63, 0.05) 0%, rgba(30, 45, 63, 0) 58%);
+  --bg-grid-lines: repeating-linear-gradient(
+      90deg,
+      rgba(49, 61, 76, 0.12) 0,
+      rgba(49, 61, 76, 0.12) 1px,
+      transparent 1px,
+      transparent 120px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      rgba(49, 61, 76, 0.09) 0,
+      rgba(49, 61, 76, 0.09) 1px,
+      transparent 1px,
+      transparent 120px
+    );
+  --bg-diagonal-lines: repeating-linear-gradient(
+    155deg,
+    rgba(36, 48, 62, 0.06) 0,
+    rgba(36, 48, 62, 0.06) 1px,
+    transparent 1px,
+    transparent 210px
+  );
+}
+
+:root[data-theme='dark'] {
+  --bg-primary: #101418;
+  --bg-secondary: #151b21;
+  --text-primary: #e8e8e8;
+  --text-secondary: #b0b0b0;
+  --text-tertiary: #888888;
+  --border-color: #404040;
+  --shadow-color: rgba(0, 0, 0, 0.3);
+  --accent-color: #4a9eff;
+  --accent-soft: rgba(74, 158, 255, 0.14);
+  --toggle-bg: #2d2d2d;
+  --section-border: #404040;
+  --card-bg: #2d2d2d;
+  --section-card-bg: linear-gradient(180deg, rgba(18, 27, 38, 0.96) 0%, rgba(24, 36, 51, 0.98) 100%);
+  --section-card-border: rgba(110, 140, 176, 0.24);
+  --section-card-soft: rgba(76, 110, 149, 0.12);
+  --section-card-icon: rgba(78, 112, 150, 0.14);
+  --project-cta-bg: linear-gradient(180deg, rgba(31, 45, 62, 0.98) 0%, rgba(39, 56, 77, 0.98) 100%);
+  --project-cta-border: rgba(110, 140, 176, 0.26);
+  --project-modal-bg: linear-gradient(180deg, rgba(15, 24, 34, 0.99) 0%, rgba(21, 33, 47, 0.99) 100%);
+  --project-modal-topbar-bg: linear-gradient(135deg, rgba(33, 51, 72, 0.88), rgba(24, 38, 55, 0.82));
+
+  --bg-gradient-base: linear-gradient(160deg, #0d1318 0%, #121922 42%, #1a2230 100%);
+  --bg-gradient-depth: radial-gradient(circle at 12% 12%, rgba(88, 112, 138, 0.14) 0%, rgba(88, 112, 138, 0) 58%),
+    radial-gradient(circle at 86% 20%, rgba(63, 83, 106, 0.12) 0%, rgba(63, 83, 106, 0) 56%),
+    radial-gradient(circle at 48% 88%, rgba(40, 58, 79, 0.12) 0%, rgba(40, 58, 79, 0) 62%);
+  --bg-grid-lines: repeating-linear-gradient(
+      90deg,
+      rgba(145, 165, 188, 0.1) 0,
+      rgba(145, 165, 188, 0.1) 1px,
+      transparent 1px,
+      transparent 120px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      rgba(145, 165, 188, 0.08) 0,
+      rgba(145, 165, 188, 0.08) 1px,
+      transparent 1px,
+      transparent 120px
+    );
+  --bg-diagonal-lines: repeating-linear-gradient(
+    155deg,
+    rgba(132, 152, 176, 0.07) 0,
+    rgba(132, 152, 176, 0.07) 1px,
+    transparent 1px,
+    transparent 210px
+  );
 }
 
 /* Reset básico */
@@ -44,7 +160,7 @@ html {
 /* Layout general centrado */
 body {
   font-family: inherit;
-  background-color: var(--bg-primary);
+  background-color: transparent;
   color: var(--text-primary);
   line-height: 1.6;
 
@@ -57,6 +173,7 @@ body {
 .container {
   width: 100%;
   max-width: 1100px;
+  margin: 0 auto;
   padding: calc(2.5rem + 60px) 1.5rem 2.5rem 1.5rem;
   text-align: center;
 }

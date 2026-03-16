@@ -9,18 +9,18 @@ function Header({ language = 'es' }) {
       ? {
           alt: "Juan Gabriel Pared's profile photo",
           h1: 'Juan Gabriel Pared',
-          subtitle: 'University Technician in Programming · Full Stack Developer',
+          subtitle: 'University Technician in Programming · Front-End Developer',
           location: 'Corrientes, Argentina',
           description:
-            'I build web and mobile applications, focused on real solutions and academic and professional projects.'
+            'I develop modern, attractive, and user-centered web interfaces using technologies such as React. I specialize in creating functional, intuitive, and visually professional applications for real-world projects.'
         }
       : {
           alt: 'Foto de presentación de Juan Gabriel Pared',
           h1: 'Juan Gabriel Pared',
-          subtitle: 'Técnico Universitario en Programación · Full Stack Developer',
+          subtitle: 'Técnico Universitario en Programación · Front-End Developer',
           location: 'Corrientes, Argentina',
           description:
-            'Desarrollo aplicaciones web y móviles, con foco en soluciones reales y proyectos académicos y profesionales.'
+            'Desarrollo interfaces web modernas, atractivas y centradas en la experiencia del usuario, utilizando tecnologías como React. Me especializo en crear aplicaciones funcionales, intuitivas y visualmente profesionales para proyectos reales.'
         }
 
   return (

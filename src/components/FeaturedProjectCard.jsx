@@ -4,12 +4,14 @@ export default function FeaturedProjectCard({ project, language = 'es', onMore }
       ? {
           repo: 'Repository',
           more: 'View more',
+          swipe: 'Swipe',
           finished: 'Completed',
           progress: 'In progress'
         }
       : {
           repo: 'Repositorio',
           more: 'Ver más',
+          swipe: 'Desliza',
           finished: 'Finalizado',
           progress: 'En desarrollo'
         }
@@ -75,6 +77,11 @@ export default function FeaturedProjectCard({ project, language = 'es', onMore }
       <button type="button" className="project-btn project-more" onClick={() => onMore(project.id)}>
         {labels.more}
       </button>
+
+      <div className="project-swipe-hint" aria-hidden="true">
+        <span className="project-swipe-line"></span>
+        <span className="project-swipe-text">{labels.swipe}</span>
+      </div>
 
       {startDate && <span className="project-start">{startDate}</span>}
     </article>

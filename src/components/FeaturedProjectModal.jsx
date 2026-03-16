@@ -2,6 +2,7 @@ import { useCallback, useEffect, useMemo, useState } from 'react'
 
 export default function FeaturedProjectModal({ project, language = 'es', onClose }) {
   const [index, setIndex] = useState(0)
+  const [touchStartX, setTouchStartX] = useState(null)
 
   const labels = useMemo(() => {
     return language === 'en'
@@ -11,6 +12,7 @@ export default function FeaturedProjectModal({ project, language = 'es', onClose
           next: 'Next',
           demo: 'Demo',
           repo: 'Repository',
+          swipe: 'Swipe',
           mainFeatures: 'Main features',
           technologies: 'Technologies',
           finished: 'Completed',
@@ -22,6 +24,7 @@ export default function FeaturedProjectModal({ project, language = 'es', onClose
           next: 'Siguiente',
           demo: 'Demo',
           repo: 'Repositorio',
+          swipe: 'Desliza',
           mainFeatures: 'Funcionalidades principales',
           technologies: 'Tecnologías',
           finished: 'Finalizado',
@@ -31,15 +34,17 @@ export default function FeaturedProjectModal({ project, language = 'es', onClose
 
   const images = project.images || []
   const statusLabel = project.status === 'in_progress' ? labels.progress : labels.finished
+  const isFirstImage = index <= 0
+  const isLastImage = images.length === 0 ? true : index >= images.length - 1
 
   const prev = useCallback(() => {
     if (images.length === 0) return
-    setIndex((i) => (i - 1 + images.length) % images.length)
+    setIndex((i) => Math.max(0, i - 1))
   }, [images.length])
 
   const next = useCallback(() => {
     if (images.length === 0) return
-    setIndex((i) => (i + 1) % images.length)
+    setIndex((i) => Math.min(images.length - 1, i + 1))
   }, [images.length])
 
   useEffect(() => {
@@ -54,6 +59,30 @@ export default function FeaturedProjectModal({ project, language = 'es', onClose
 
   const description = project.fullDescription?.[language] || []
   const technologies = project.technologies?.[language] || []
+
+  const handleTouchStart = (e) => {
+    if (!images.length) return
+    setTouchStartX(e.touches?.[0]?.clientX ?? null)
+  }
+
+  const handleTouchEnd = (e) => {
+    if (touchStartX == null || !images.length) return
+    const endX = e.changedTouches?.[0]?.clientX
+    if (typeof endX !== 'number') return
+
+    const delta = endX - touchStartX
+    const threshold = 36
+
+    if (Math.abs(delta) < threshold) return
+
+    if (delta < 0) {
+      next()
+    } else {
+      prev()
+    }
+
+    setTouchStartX(null)
+  }
 
   return (
     <div className="project-modal-overlay" role="dialog" aria-modal="true" onClick={onClose}>
@@ -77,14 +106,20 @@ export default function FeaturedProjectModal({ project, language = 'es', onClose
               <div className="project-modal-gallery">
                 <div className="project-modal-media">
                   {images.length > 1 ? (
-                    <button type="button" className="project-modal-nav prev" onClick={prev} aria-label={labels.prev}>
+                    <button
+                      type="button"
+                      className="project-modal-nav prev"
+                      onClick={prev}
+                      aria-label={labels.prev}
+                      disabled={isFirstImage}
+                    >
                       ‹
                     </button>
                   ) : (
                     <div className="project-modal-nav-spacer" aria-hidden="true" />
                   )}
 
-                  <div className="project-modal-hero">
+                  <div className="project-modal-hero" onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
                     {images[index] && (
                       <img
                         src={images[index]}
@@ -94,13 +129,26 @@ export default function FeaturedProjectModal({ project, language = 'es', onClose
                   </div>
 
                   {images.length > 1 ? (
-                    <button type="button" className="project-modal-nav next" onClick={next} aria-label={labels.next}>
+                    <button
+                      type="button"
+                      className="project-modal-nav next"
+                      onClick={next}
+                      aria-label={labels.next}
+                      disabled={isLastImage}
+                    >
                       ›
                     </button>
                   ) : (
                     <div className="project-modal-nav-spacer" aria-hidden="true" />
                   )}
                 </div>
+
+                {images.length > 1 && (
+                  <div className="project-modal-swipe-hint" aria-hidden="true">
+                    <span className="project-modal-swipe-line"></span>
+                    <span className="project-modal-swipe-text">{labels.swipe}</span>
+                  </div>
+                )}
 
                 {images.length > 1 && (
                   <div className="project-modal-dots" role="tablist" aria-label={language === 'en' ? 'Screenshots' : 'Capturas'}>
@@ -125,7 +173,21 @@ export default function FeaturedProjectModal({ project, language = 'es', onClose
                   </a>
                 ) : null}
                 {project.repoUrl ? (
-                  <a className="project-btn" href={project.repoUrl} target="_blank" rel="noopener noreferrer">
+                  <a className="project-btn project-modal-repo-btn" href={project.repoUrl} target="_blank" rel="noopener noreferrer">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      aria-hidden="true"
+                    >
+                      <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                    </svg>
                     {labels.repo}
                   </a>
                 ) : null}

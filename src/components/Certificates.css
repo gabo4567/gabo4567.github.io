@@ -6,12 +6,16 @@
   gap: 1.25rem;
 }
 
+.certificates-swipe-hint {
+  display: none;
+}
+
 .certificate-card {
   position: relative;
   width: 100%;
   border-radius: 18px;
-  border: 1px solid var(--border-color);
-  background: linear-gradient(135deg, rgba(128, 128, 128, 0.06), rgba(128, 128, 128, 0.02));
+  border: 1px solid var(--section-card-border);
+  background: var(--section-card-bg);
   box-shadow: 0 10px 26px var(--shadow-color);
   overflow: hidden;
   text-align: center;
@@ -180,11 +184,72 @@
 
 @media (max-width: 768px) {
   .certificates-grid {
-    grid-template-columns: 1fr;
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: calc((100% - 86%) / 2);
+    gap: 0.8rem;
+    padding: 0 calc((100% - 86%) / 2) 0.45rem;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .certificates-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .certificate-card {
+    flex: 0 0 86%;
+    scroll-snap-align: center;
+    padding: 0.8rem 0.8rem 0.9rem;
+    border-radius: 14px;
+    gap: 0.65rem;
   }
 
   .certificate-preview {
-    height: 290px;
+    height: 225px;
+    border-radius: 10px;
+  }
+
+  .certificate-title {
+    font-size: 0.88rem;
+    line-height: 1.25;
+  }
+
+  .certificates-swipe-hint {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.45rem;
+    margin: 0.2rem auto 0;
+    color: var(--text-tertiary);
+    font-size: 0.78rem;
+    letter-spacing: 0.02em;
+  }
+
+  .certificates-swipe-line {
+    width: 38px;
+    height: 2px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, transparent 0%, var(--text-tertiary) 45%, transparent 100%);
+    animation: certificatesSwipePulse 1.6s ease-in-out infinite;
+    transform-origin: center;
+  }
+
+  .certificates-swipe-text {
+    font-weight: 600;
+  }
+
+  @keyframes certificatesSwipePulse {
+    0%,
+    100% {
+      transform: scaleX(0.72);
+      opacity: 0.55;
+    }
+    50% {
+      transform: scaleX(1);
+      opacity: 1;
+    }
   }
 
   .certificate-modal-body {

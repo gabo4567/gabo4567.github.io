@@ -86,6 +86,7 @@
 .hero-photo {
   display: flex;
   justify-content: flex-end;
+  transform: translateY(-14px);
 }
 
 .hero-photo-img {
@@ -132,6 +133,7 @@
   .hero-photo {
     justify-content: center;
     order: -1;
+    transform: none;
   }
 }
 

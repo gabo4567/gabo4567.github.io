@@ -50,7 +50,39 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  position: relative;
+  isolation: isolate;
+  overflow-x: hidden;
   transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body::before,
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+body::before {
+  background: var(--bg-gradient-base), var(--bg-gradient-depth);
+  z-index: -2;
+}
+
+body::after {
+  background: var(--bg-grid-lines), var(--bg-diagonal-lines);
+  mix-blend-mode: normal;
+  opacity: 0.62;
+  z-index: -1;
+}
+
+#root {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  min-height: 100vh;
 }
 
 h1 {
@@ -104,5 +136,12 @@ button:focus-visible {
   }
   button {
     background-color: #f9f9f9;
+  }
+}
+
+@media (max-width: 900px) {
+  body::after {
+    mix-blend-mode: normal;
+    opacity: 0.56;
   }
 }

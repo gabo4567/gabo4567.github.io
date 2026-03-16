@@ -6,10 +6,7 @@
   margin-top: 1.5rem;
   --card-gap: 1.25rem;
   --cards-per-view: 3;
-  display: grid;
-  grid-template-columns: 52px 1fr 52px;
-  align-items: center;
-  gap: 0.75rem;
+  display: block;
 }
 
 .featured-track {
@@ -27,50 +24,8 @@
   display: none;
 }
 
-.carousel-arrow {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  border: 1px solid var(--border-color);
-  background: var(--toggle-bg);
-  color: var(--text-primary);
-  font-size: 28px;
-  line-height: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  box-shadow: 0 10px 22px var(--shadow-color);
-  transition: transform 0.2s ease, background-color 0.2s ease, opacity 0.2s ease;
-  justify-self: center;
-}
-
-.carousel-arrow:hover {
-  background: var(--section-border);
-  transform: scale(1.03);
-}
-
-.carousel-arrow:disabled {
-  opacity: 0.35;
-  cursor: default;
-  box-shadow: none;
-}
-
-.carousel-arrow.prev {
-  grid-column: 1;
-}
-
-.carousel-arrow.next {
-  grid-column: 3;
-}
-
-.featured-track {
-  grid-column: 2;
-}
-
-.carousel-arrow:disabled:hover {
-  transform: none;
-  background: var(--toggle-bg);
+.project-swipe-hint {
+  display: none;
 }
 
 .project-card {
@@ -81,8 +36,8 @@
     );
   scroll-snap-align: start;
   border-radius: 18px;
-  border: 1px solid var(--border-color);
-  background: var(--card-bg);
+  border: 1px solid var(--section-card-border);
+  background: var(--section-card-bg);
   box-shadow: 0 10px 26px var(--shadow-color);
   overflow: hidden;
   text-align: left;
@@ -103,7 +58,7 @@
   width: 100%;
   height: 170px;
   overflow: hidden;
-  background: rgba(128, 128, 128, 0.08);
+  background: var(--section-card-soft);
 }
 
 .project-card-image img {
@@ -173,8 +128,8 @@
 }
 
 .project-tag {
-  border: 1px solid var(--border-color);
-  background: rgba(128, 128, 128, 0.06);
+  border: 1px solid var(--section-card-border);
+  background: var(--section-card-soft);
   color: var(--text-secondary);
   padding: 0.28rem 0.55rem;
   border-radius: 999px;
@@ -193,6 +148,10 @@
   position: absolute;
   left: 14px;
   bottom: 12px;
+  border-color: var(--project-cta-border);
+  background: var(--project-cta-bg);
+  color: #f4f8fc;
+  box-shadow: 0 10px 24px var(--shadow-color);
 }
 
 .project-btn {
@@ -201,8 +160,8 @@
   justify-content: center;
   padding: 0.55rem 0.85rem;
   border-radius: 12px;
-  border: 1px solid var(--border-color);
-  background: rgba(128, 128, 128, 0.06);
+  border: 1px solid var(--section-card-border);
+  background: var(--section-card-soft);
   color: var(--text-primary);
   font-weight: 700;
   font-size: 0.92rem;
@@ -216,6 +175,10 @@
   height: 44px;
   padding: 0;
   position: relative;
+  border-color: var(--project-cta-border);
+  background: var(--project-cta-bg);
+  color: #f4f8fc;
+  box-shadow: 0 8px 20px var(--shadow-color);
 }
 
 .project-btn.project-btn-icon svg {
@@ -234,8 +197,8 @@
   pointer-events: none;
   white-space: nowrap;
   border-radius: 10px;
-  border: 1px solid var(--border-color);
-  background: var(--card-bg);
+  border: 1px solid var(--section-card-border);
+  background: var(--section-card-bg);
   color: var(--text-primary);
   font-size: 0.82rem;
   padding: 0.35rem 0.55rem;
@@ -253,9 +216,9 @@
   pointer-events: none;
   width: 10px;
   height: 10px;
-  background: var(--card-bg);
-  border-left: 1px solid var(--border-color);
-  border-bottom: 1px solid var(--border-color);
+  background: var(--section-card-bg);
+  border-left: 1px solid var(--section-card-border);
+  border-bottom: 1px solid var(--section-card-border);
   transform: translateX(-50%) translateY(2px) rotate(-45deg);
   transition: opacity 0.15s ease, transform 0.15s ease;
   z-index: 4;
@@ -278,6 +241,38 @@
   background-color: var(--accent-soft);
   color: var(--text-primary);
   text-decoration: none;
+}
+
+.project-btn.project-more {
+  border-color: var(--project-cta-border);
+  background: var(--project-cta-bg);
+  color: #f4f8fc;
+  box-shadow: 0 10px 24px var(--shadow-color);
+}
+
+.project-more:hover {
+  background: var(--accent-color);
+  border-color: var(--accent-color);
+  color: #ffffff;
+  box-shadow: 0 10px 22px var(--shadow-color);
+}
+
+:root[data-theme='light'] .project-btn.project-more,
+:root[data-theme='dark'] .project-btn.project-more,
+:root[data-theme='light'] .project-btn.project-btn-icon,
+:root[data-theme='dark'] .project-btn.project-btn-icon {
+  background: var(--project-cta-bg);
+  border-color: var(--project-cta-border);
+  color: #f4f8fc;
+}
+
+:root[data-theme='light'] .project-btn.project-more:hover,
+:root[data-theme='dark'] .project-btn.project-more:hover,
+:root[data-theme='light'] .project-btn.project-btn-icon:hover,
+:root[data-theme='dark'] .project-btn.project-btn-icon:hover {
+  background: var(--accent-color);
+  border-color: var(--accent-color);
+  color: #ffffff;
 }
 
 .project-btn.primary {
@@ -335,8 +330,8 @@
   max-height: 86vh;
   overflow: hidden;
   border-radius: 18px;
-  border: 1px solid var(--border-color);
-  background: var(--card-bg);
+  border: 1px solid var(--section-card-border);
+  background: var(--project-modal-bg);
   box-shadow: 0 22px 60px rgba(0, 0, 0, 0.45);
   position: relative;
   display: flex;
@@ -360,9 +355,9 @@
   width: 44px;
   height: 44px;
   border-radius: 12px;
-  border: 1px solid transparent;
-  background: transparent;
-  color: var(--text-primary);
+  border: 1px solid var(--project-cta-border);
+  background: var(--project-cta-bg);
+  color: #f4f8fc;
   cursor: pointer;
   transition: background-color 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
   z-index: 2;
@@ -384,8 +379,8 @@
   position: relative;
   padding: 1.2rem 4.1rem 1.05rem 1.4rem;
   text-align: left;
-  background: linear-gradient(135deg, rgba(128, 128, 128, 0.06), rgba(128, 128, 128, 0.02));
-  border-bottom: 1px solid var(--border-color);
+  background: var(--project-modal-topbar-bg);
+  border-bottom: 1px solid var(--section-card-border);
 }
 
 .project-modal-title {
@@ -461,7 +456,7 @@
   gap: 0.95rem;
   min-width: 0;
   text-align: left;
-  border-left: 1px solid var(--border-color);
+  border-left: 1px solid var(--section-card-border);
   padding-left: 1.1rem;
 }
 
@@ -491,25 +486,32 @@
   border-top: none;
 }
 
+.project-modal-swipe-hint {
+  display: none;
+}
+
 .project-modal-dotbtn {
   width: 8px;
   height: 8px;
   border-radius: 999px;
-  border: 1px solid rgba(128, 128, 128, 0.35);
-  background: rgba(128, 128, 128, 0.22);
+  border: 1px solid var(--project-cta-border);
+  background: var(--project-cta-bg);
   cursor: pointer;
   transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+  opacity: 0.6;
 }
 
 .project-modal-dotbtn:hover {
   transform: translateY(-1px);
   border-color: var(--accent-color);
-  background: var(--accent-soft);
+  background: var(--accent-color);
+  opacity: 1;
 }
 
 .project-modal-dotbtn.active {
   border-color: var(--accent-color);
   background: var(--accent-color);
+  opacity: 1;
 }
 
 .project-modal-cta {
@@ -517,6 +519,10 @@
   justify-content: center;
   gap: 0.6rem;
   flex-wrap: wrap;
+}
+
+.project-modal-repo-btn {
+  gap: 0.45rem;
 }
 
 .project-btn.project-btn-primary {
@@ -596,9 +602,9 @@
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  background: rgba(0, 0, 0, 0.45);
-  color: white;
+  border: 1px solid var(--project-cta-border);
+  background: var(--project-cta-bg);
+  color: #f4f8fc;
   font-size: 22px;
   line-height: 1;
   display: flex;
@@ -610,8 +616,19 @@
 }
 
 .project-modal-nav:hover {
-  background: rgba(0, 0, 0, 0.65);
+  background: var(--accent-color);
+  border-color: var(--accent-color);
   transform: scale(1.04);
+}
+
+.project-modal-nav:disabled {
+  opacity: 0.38;
+  cursor: default;
+}
+
+.project-modal-nav:disabled:hover {
+  background: var(--project-cta-bg);
+  transform: none;
 }
 
 .project-modal-thumbs {
@@ -685,8 +702,56 @@
 @media (max-width: 640px) {
   .featured-carousel {
     --cards-per-view: 1;
-    grid-template-columns: 44px 1fr 44px;
+  }
+
+  .project-card-body {
+    padding-bottom: 1rem;
+  }
+
+  .project-actions {
+    justify-content: center;
+  }
+
+  .project-more {
+    position: static;
+    display: flex;
+    margin: 0 auto 0.35rem;
+  }
+
+  .project-swipe-hint {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     gap: 0.5rem;
+    margin: 0 auto 2.35rem;
+    color: var(--text-tertiary);
+    font-size: 0.78rem;
+    letter-spacing: 0.02em;
+  }
+
+  .project-swipe-line {
+    width: 38px;
+    height: 2px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, transparent 0%, var(--text-tertiary) 45%, transparent 100%);
+    animation: projectSwipePulse 1.6s ease-in-out infinite;
+    transform-origin: center;
+  }
+
+  .project-swipe-text {
+    font-weight: 600;
+  }
+
+  @keyframes projectSwipePulse {
+    0%,
+    100% {
+      transform: scaleX(0.7);
+      opacity: 0.55;
+    }
+    50% {
+      transform: scaleX(1);
+      opacity: 1;
+    }
   }
 
   .project-modal-grid {
@@ -701,7 +766,67 @@
   }
 
   .project-modal-hero {
-    height: 320px;
+    height: 45vh;
+    min-height: 250px;
+    max-height: 440px;
+  }
+
+  .project-modal-hero img {
+    object-fit: contain;
+  }
+
+  .project-modal-media {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .project-modal-nav,
+  .project-modal-nav-spacer {
+    display: none;
+  }
+
+  .project-modal-swipe-hint {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.45rem;
+    margin: 0.3rem auto 0.15rem;
+    color: var(--text-tertiary);
+    font-size: 0.78rem;
+    letter-spacing: 0.02em;
+  }
+
+  .project-modal-swipe-line {
+    width: 38px;
+    height: 2px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, transparent 0%, var(--text-tertiary) 45%, transparent 100%);
+    animation: projectModalSwipePulse 1.6s ease-in-out infinite;
+    transform-origin: center;
+  }
+
+  .project-modal-swipe-text {
+    font-weight: 600;
+  }
+
+  .project-modal-dots {
+    padding: 0.15rem 0.9rem 0.05rem;
+  }
+
+  .project-modal-cta {
+    margin-top: 0.2rem;
+  }
+
+  @keyframes projectModalSwipePulse {
+    0%,
+    100% {
+      transform: scaleX(0.72);
+      opacity: 0.55;
+    }
+    50% {
+      transform: scaleX(1);
+      opacity: 1;
+    }
   }
 
   .project-modal-topbar {
@@ -716,6 +841,6 @@
   }
 
   .project-modal-content {
-    padding: 0.75rem 1.1rem 1.2rem;
+    padding: 0.45rem 0.85rem 1rem;
   }
 }
