@@ -20,7 +20,7 @@ function Header({ language = 'es' }) {
           subtitle: 'Técnico Universitario en Programación · Front-End Developer',
           location: 'Corrientes, Argentina',
           description:
-            'Desarrollo interfaces web modernas, atractivas y centradas en la experiencia del usuario, utilizando tecnologías como React. Me especializo en crear aplicaciones funcionales, intuitivas y visualmente profesionales para proyectos reales.'
+            'Desarrollo interfaces web modernas enfocadas en la experiencia de usuario mediante tecnologías como React. Me especializo en construir aplicaciones funcionales, intuitivas y con estándares de diseño profesional, aplicadas a proyectos reales.'
         }
 
   return (

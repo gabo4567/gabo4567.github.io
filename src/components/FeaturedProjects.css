@@ -484,6 +484,9 @@
   gap: 0.45rem;
   padding: 0.35rem 0.9rem 0.1rem;
   border-top: none;
+  --project-modal-dot-base: #667892;
+  --project-modal-dot-hover: #4d9cff;
+  --project-modal-dot-active: #1f7ae0;
 }
 
 .project-modal-swipe-hint {
@@ -494,24 +497,41 @@
   width: 8px;
   height: 8px;
   border-radius: 999px;
-  border: 1px solid var(--project-cta-border);
-  background: var(--project-cta-bg);
+  border: 1px solid var(--project-modal-dot-base);
+  background: var(--project-modal-dot-base);
   cursor: pointer;
-  transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
-  opacity: 0.6;
+  transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+  opacity: 0.75;
 }
 
 .project-modal-dotbtn:hover {
   transform: translateY(-1px);
-  border-color: var(--accent-color);
-  background: var(--accent-color);
+  border-color: var(--project-modal-dot-hover);
+  background: var(--project-modal-dot-hover);
+  box-shadow: 0 0 0 4px rgba(77, 156, 255, 0.18);
+  opacity: 1;
+}
+
+.project-modal-dotbtn:focus-visible {
+  outline: none;
+  border-color: var(--project-modal-dot-hover);
+  background: var(--project-modal-dot-hover);
+  box-shadow: 0 0 0 4px rgba(77, 156, 255, 0.22);
   opacity: 1;
 }
 
 .project-modal-dotbtn.active {
-  border-color: var(--accent-color);
-  background: var(--accent-color);
+  border-color: var(--project-modal-dot-active);
+  background: var(--project-modal-dot-active);
+  box-shadow: 0 0 0 4px rgba(31, 122, 224, 0.22);
   opacity: 1;
+}
+
+.project-modal-dotbtn.active:hover,
+.project-modal-dotbtn.active:focus-visible {
+  border-color: var(--project-modal-dot-active);
+  background: var(--project-modal-dot-active);
+  box-shadow: 0 0 0 4px rgba(31, 122, 224, 0.26);
 }
 
 .project-modal-cta {

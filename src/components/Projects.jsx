@@ -68,9 +68,9 @@ function Projects({ language = 'es' }) {
       },
       {
         id: 'ecommerce',
-        title: '🛒 E-commerce Integrador P4',
-        status: 'in_progress',
-        startDate: { es: 'SEP 2025 - Actualidad', en: 'Sep 2025 - Present' },
+        title: '🛒 Plataforma de E-commerce basada en Microservicios',
+        status: 'finished',
+        startDate: { es: 'SEP 2025 - DIC 2025', en: 'Sep 2025 - Dec 2025' },
         repoUrl: 'https://github.com/gabo4567/ecommerce-integrador-p4',
         demoUrl: null,
         images: ecommerceImages,
@@ -78,14 +78,14 @@ function Projects({ language = 'es' }) {
         modalAlt: { es: 'E-commerce captura', en: 'E-commerce screenshot' },
         shortDescription: {
           en: 'E-commerce project developed as an integrative assignment for Programming IV, combining user/product/order management with modern full stack practices. It includes JWT authentication, real-time communication, an AI microservice structure, Docker deployment, and solid engineering practices.',
-          es: 'Proyecto de e-commerce desarrollado como Trabajo Práctico Integrador de la materia Programación IV, combinando funcionalidades de gestión de usuarios, productos y pedidos con prácticas modernas de desarrollo full stack. Incluye autenticación con JWT y comunicación en tiempo real, además de estructura para microservicios de IA, despliegue con Docker y buenas prácticas de ingeniería.'
+          es: 'Desarrollo de plataforma e-commerce full stack con gestión integral de usuarios, productos y pedidos. Implementa autenticación segura con JWT, comunicación en tiempo real y arquitectura escalable preparada para microservicios de IA. El proyecto contempla despliegue contenerizado con Docker y adopta buenas prácticas de ingeniería y diseño de software.'
         },
         fullDescription: {
           en: [
             'E-commerce project developed as an integrative assignment for Programming IV, combining user/product/order management with modern full stack practices. It includes JWT authentication, real-time communication, an AI microservice structure, Docker deployment, and solid engineering practices.'
           ],
           es: [
-            'Proyecto de e-commerce desarrollado como Trabajo Práctico Integrador de la materia Programación IV, combinando funcionalidades de gestión de usuarios, productos y pedidos con prácticas modernas de desarrollo full stack. Incluye autenticación con JWT y comunicación en tiempo real, además de estructura para microservicios de IA, despliegue con Docker y buenas prácticas de ingeniería.'
+            'Desarrollo de plataforma e-commerce full stack con gestión integral de usuarios, productos y pedidos. Implementa autenticación segura con JWT, comunicación en tiempo real y arquitectura escalable preparada para microservicios de IA. El proyecto contempla despliegue contenerizado con Docker y adopta buenas prácticas de ingeniería y diseño de software.'
           ]
         },
         technologies: {
@@ -113,9 +113,9 @@ function Projects({ language = 'es' }) {
       },
       {
         id: 'clinica',
-        title: '📱 Clínica Salud Total – Aplicación Mobile',
-        status: 'in_progress',
-        startDate: { es: 'JUN 2025 - Actualidad', en: 'Jun 2025 - Present' },
+        title: '📱 Clinica Salud Total - Aplicación Mobile Android',
+        status: 'finished',
+        startDate: { es: 'JUN 2025 - JUL 2025', en: 'Jun 2025 - Jul 2025' },
         repoUrl: 'https://github.com/gabo4567/Clinica-ST-Mobile',
         demoUrl: null,
         images: clinicaImages,
