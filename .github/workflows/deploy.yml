@@ -1,0 +1,12 @@
+name: CI Portfolio Deployment
+on:
+  push:
+    branches: [ main ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Check structure
+        run: echo "Verificando archivos del portafolio"
