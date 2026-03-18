@@ -25,75 +25,43 @@ function highlightText(text, phrases) {
 }
 
 const EDUCATION_HIGHLIGHTS_ES = [
-  'Codo a Codo 4.0',
-  'lógica de programación',
-  'algoritmos',
-  'resolución de problemas',
+  'Técnico Universitario en Programación',
   'Universidad Tecnológica Nacional',
-  'Facultad Regional Resistencia',
-  'Programación Orientada a Objetos',
-  'consultas SQL avanzadas',
-  'procedimientos almacenados',
-  'bases de datos',
-  'Java',
-  'MySQL',
-  'SQL Server',
   'APIs REST',
   '.NET',
   'C#',
-  'patrones de diseño',
-  'arquitectura en capas',
-  'transacciones',
-  'persistencia de datos',
+  'Programación Orientada a Objetos',
+  'Patrones de diseño',
+  'Arquitectura en capas',
   'Entity Framework',
-  'buenas prácticas de código',
-  'Análisis y procesamiento de datos',
-  'Full Stack',
-  'Junior Achievement Argentina',
-  'Yo Puedo Programar',
+  'Java',
+  'SQL',
+  'MySQL',
+  'SQL Server',
   'HTML',
   'CSS',
-  'Promedio académico',
-  '9/10',
-  '8,7/10',
-  'Técnico Universitario en Programación',
-  'IT'
+  'Full Stack',
+  'Codo a Codo 4.0'
 ]
 
 const EDUCATION_HIGHLIGHTS_EN = [
-  'Codo a Codo 4.0',
-  'programming logic',
-  'algorithms',
-  'problem solving',
+  'University Technician in Programming',
   'National Technological University',
-  'Resistencia Regional Faculty',
-  'Object-Oriented Programming',
-  'advanced SQL queries',
-  'stored procedures',
-  'databases',
-  'Java',
-  'MySQL',
-  'SQL Server',
   'REST APIs',
   '.NET',
   'C#',
-  'design patterns',
-  'layered architecture',
-  'transactions',
-  'data persistence',
+  'Object-Oriented Programming',
+  'Design patterns',
+  'Layered architecture',
   'Entity Framework',
-  'code best practices',
-  'Data analysis and processing',
-  'Full Stack',
-  'Junior Achievement Argentina',
-  'Yo Puedo Programar',
+  'Java',
+  'SQL',
+  'MySQL',
+  'SQL Server',
   'HTML',
   'CSS',
-  'Academic average',
-  '9/10',
-  '8.7/10',
-  'University Technician in Programming',
-  'IT'
+  'Full Stack',
+  'Codo a Codo 4.0'
 ]
 
 export default function Education({ language = 'es' }) {
@@ -178,7 +146,7 @@ export default function Education({ language = 'es' }) {
               period: 'Dic 2023 – Feb 2024',
               title: 'Preparación Universitaria',
               paragraphs: [
-                'Preparación intensiva para el ingreso a la carrera, fortaleciendo lógica computacional, algoritmos y fundamentos de programación.'
+                'Curso introductorio intensivo de ingreso a la carrera, con formación en fundamentos de programación y matemática aplicada.'
               ]
             },
             {
@@ -215,11 +183,11 @@ export default function Education({ language = 'es' }) {
               note: 'Promedio académico: 8,7/10'
             },
             {
-              period: '2025',
+              period: 'Feb 2026',
               title: 'Egreso Académico',
               paragraphs: [
-                'Egresado como Técnico Universitario en Programación, con formación sólida en desarrollo de software robusto, mantenible y escalable.',
-                'Me encuentro en búsqueda de mi primera oportunidad profesional en IT, con el objetivo de integrarme a equipos de desarrollo, aportar valor desde el primer día y continuar mi crecimiento profesional.'
+                'Egresado de la Universidad Tecnológica Nacional – Facultad Regional Resistencia, con formación sólida en desarrollo de software robusto, mantenible y escalable.',
+                'Actualmente en búsqueda de mi primera oportunidad profesional en IT, con el objetivo de integrarme a equipos de desarrollo y aportar valor desde el primer día.'
               ]
             }
           ]
