@@ -27,6 +27,17 @@
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
+.tech-group-tools .tech-grid {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.tech-group-tools .tech-label {
+  white-space: normal;
+  overflow: visible;
+  text-overflow: initial;
+  line-height: 1.25;
+}
+
 .tech-chip {
   border: 1px solid var(--section-card-border);
   background: var(--section-card-bg);
@@ -134,6 +145,10 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .tech-group-tools .tech-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .tech-chip {
     padding: 0.65rem 0.75rem;
     border-radius: 12px;
@@ -201,5 +216,9 @@
     text-overflow: initial;
     line-height: 1.2;
     word-break: break-word;
+  }
+
+  .tech-group-tools .tech-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
