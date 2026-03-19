@@ -4,9 +4,8 @@ import './DownloadCVButton.css'
 function DownloadCVButton({ language = 'es' }) {
   const handleDownload = () => {
     const link = document.createElement('a')
-    // Usar la ruta pública para que el archivo se sirva desde `/CV.pdf`
-    link.href = '/CV Developer.pdf'
-    link.download = 'Juan_Gabriel_Pared_Developer_CV.pdf'
+    link.href = '/Juan-Gabriel-Pared-Developer-CV.pdf'
+    link.download = 'Juan-Gabriel-Pared-Developer-CV.pdf'
     document.body.appendChild(link)
     link.click()
     document.body.removeChild(link)
