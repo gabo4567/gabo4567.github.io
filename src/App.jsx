@@ -8,6 +8,7 @@ import Certificates from './components/Certificates'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import './App.css'
+import { trackPageView } from './analytics'
 
 function App() {
   const [theme, setTheme] = useState(() => {
@@ -38,6 +39,10 @@ function App() {
     localStorage.setItem('language', language)
     document.documentElement.lang = language
   }, [language])
+
+  useEffect(() => {
+    trackPageView(window.location.pathname)
+  }, [])
 
   return (
     <>
