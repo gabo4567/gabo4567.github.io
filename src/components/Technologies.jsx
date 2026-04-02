@@ -4,7 +4,8 @@ import './Technologies.css'
 const DEVICON_BASE = 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons'
 
 const ICON_ALIASES = {
-  'react-native': 'react'
+  'react-native': 'react',
+  'htmlcss': 'html'
 }
 
 const ICONS = {
@@ -93,7 +94,40 @@ const ICONS = {
         <rect x="13" y="13" width="7" height="7" rx="2" />
       </svg>
     )
-  }
+  },
+  sql: {
+    type: 'svg',
+    svg: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <ellipse cx="12" cy="5" rx="9" ry="3" />
+        <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" />
+        <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
+      </svg>
+    )
+  },
+  excel: {
+    type: 'svg',
+    svg: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+        <polyline points="14 2 14 8 20 8" />
+        <line x1="8" y1="13" x2="16" y2="13" />
+        <line x1="8" y1="17" x2="16" y2="17" />
+      </svg>
+    )
+  },
+  powerbi: {
+    type: 'svg',
+    svg: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <line x1="18" y1="20" x2="18" y2="10" />
+        <line x1="12" y1="20" x2="12" y2="4" />
+        <line x1="6" y1="20" x2="6" y2="14" />
+        <line x1="3" y1="20" x2="21" y2="20" />
+      </svg>
+    )
+  },
+  mysql: { type: 'img', src: `${DEVICON_BASE}/mysql/mysql-original.svg` }
 }
 
 function TechIcon({ id, label }) {
@@ -113,47 +147,44 @@ function TechIcon({ id, label }) {
 
 const TECH_GROUPS = [
   {
-    id: 'backend',
-    titleEs: 'Backend y BD',
-    titleEn: 'Backend & DB',
+    id: 'data',
+    titleEs: 'Análisis de Datos',
+    titleEn: 'Data Analysis',
     items: [
-      { id: 'java', label: 'Java' },
-      { id: 'python', label: 'Python' },
-      { id: 'django', label: 'Django' },
-      { id: 'fastapi', label: 'FastAPI' },
-      { id: 'node', label: 'Node.js' },
-      { id: 'express', label: 'Express' },
+      { id: 'sql', label: 'SQL' },
+      { id: 'excel', label: 'Excel' },
+      { id: 'powerbi', label: 'Power BI' }
+    ]
+  },
+  {
+    id: 'databases',
+    titleEs: 'Bases de Datos',
+    titleEn: 'Databases',
+    items: [
       { id: 'postgres', label: 'PostgreSQL' },
+      { id: 'mysql', label: 'MySQL / SQL Server' },
       { id: 'mongo', label: 'MongoDB' },
-      { id: 'firebase', label: 'Firebase' },
-      { id: 'socketio', label: 'Socket.IO' }
+      { id: 'firebase', label: 'Firebase' }
     ]
   },
   {
-    id: 'frontend',
-    titleEs: 'Frontend',
-    titleEn: 'Frontend',
+    id: 'programming',
+    titleEs: 'Programación',
+    titleEn: 'Programming',
     items: [
-      { id: 'html', label: 'HTML' },
-      { id: 'css', label: 'CSS' },
       { id: 'javascript', label: 'JavaScript' },
-      { id: 'react', label: 'React' }
+      { id: 'python', label: 'Python' },
+      { id: 'node', label: 'Node.js (APIs REST)' }
     ]
   },
   {
-    id: 'mobile',
-    titleEs: 'Mobile',
-    titleEn: 'Mobile',
+    id: 'software',
+    titleEs: 'Desarrollo de Software',
+    titleEn: 'Software Development',
     items: [
+      { id: 'react', label: 'React' },
       { id: 'react-native', label: 'React Native' },
-      { id: 'kotlin', label: 'Kotlin' },
-      { id: 'android-studio', label: 'Android Studio' },
-      { id: 'mvvm', label: 'MVVM' },
-      { id: 'viewbinding', label: 'ViewBinding' },
-      { id: 'retrofit', label: 'Retrofit' },
-      { id: 'coroutines', label: 'Coroutines' },
-      { id: 'sharedpreferences', label: 'Shared Preferences' },
-      { id: 'recyclerview', label: 'Recycler View' }
+      { id: 'htmlcss', label: 'HTML, CSS' }
     ]
   },
   {
@@ -161,10 +192,9 @@ const TECH_GROUPS = [
     titleEs: 'Herramientas',
     titleEn: 'Tools',
     items: [
+      { id: 'git', label: 'Git & GitHub' },
       { id: 'docker', label: 'Docker' },
-      { id: 'cicd', label: 'CI/CD (GitHub Actions)' },
-      { id: 'git', label: 'Git' },
-      { id: 'github', label: 'GitHub' }
+      { id: 'cicd', label: 'CI/CD (GitHub Actions)' }
     ]
   }
 ]

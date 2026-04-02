@@ -3,22 +3,15 @@ import './About.css'
 
 const ABOUT_HIGHLIGHTS_ES = [
   'Programación',
-  'Full Stack',
+  'análisis de datos',
+  'desarrollo de software full stack',
   'aplicaciones web y móviles',
-  'React, React Native, .NET y Firebase',
-  'diseño de interfaces',
-  'desarrollo de APIs',
-  'modelado de bases de datos',
-  'lógica de negocio',
-  'rendimiento',
-  'escalabilidad',
-  'experiencia de usuario',
-  'buenas prácticas',
-  'código mantenible',
-  'primera oportunidad en IT',
-  'equipo profesional',
-  'valor desde el primer día',
-  'desarrollador'
+  'diseño de APIs',
+  'bases de datos',
+  'análisis, procesamiento y visualización de datos',
+  'SQL, Excel y Power BI',
+  'Data Analyst Jr.',
+  'primera oportunidad profesional'
 ]
 
 function escapeRegExp(text) {
@@ -50,19 +43,19 @@ function About({ language = 'es' }) {
       ? {
           title: 'About',
           items: [
-            'University Technician in Programming from UTN (Resistencia), focused on Full Stack development.',
-            'Experience building web and mobile applications using React, React Native, .NET, and Firebase, contributing to UI design, API development, database modeling, and business logic.',
-            'I build systems focused on performance, scalability, and user experience, applying best practices and maintainable code.',
-            'I’m looking for my first opportunity in IT to join a professional team, add value from day one, and keep growing as a developer.'
+            'University Technician in Programming from UTN, focused on data analysis.',
+            'I have experience in full stack software development, building web and mobile applications, designing APIs, and managing databases, which allows me to understand and handle data in a structured and efficient way.',
+            'Focused on the analysis, processing, and visualization of data for decision-making, using tools like SQL, Excel, and Power BI.',
+            "I'm looking for my first professional opportunity as a Jr. Data Analyst, where I can add value through data analysis and continue growing in the field."
           ]
         }
       : {
           title: 'Sobre mí',
           items: [
-            'Técnico Universitario en Programación egresado de la Universidad Tecnológica Nacional (Facultad Regional Resistencia), orientado al desarrollo Full Stack.',
-            'Experiencia construyendo aplicaciones web y móviles utilizando React, React Native, .NET y Firebase, participando en el diseño de interfaces, desarrollo de APIs, modelado de bases de datos y lógica de negocio.',
-            'Desarrollo sistemas enfocados en rendimiento, escalabilidad y experiencia de usuario, aplicando buenas prácticas y código mantenible.',
-            'Busco mi primera oportunidad en IT para integrarme a un equipo profesional, aportar valor desde el primer día y continuar creciendo como desarrollador.'
+            'Técnico Universitario en Programación egresado de la Universidad Tecnológica Nacional (UTN), con formación en desarrollo de software y bases de datos.',
+            'Cuento con experiencia en desarrollo de software full stack, participando en la construcción de aplicaciones web y móviles, diseño de APIs y manejo de bases de datos, lo que me permite comprender y trabajar la información de forma estructurada y eficiente.',
+            'Enfocado en el análisis, procesamiento y visualización de datos para la toma de decisiones, utilizando herramientas como SQL, Excel y Power BI.',
+            'Busco mi primera oportunidad profesional como Data Analyst Jr., donde pueda aportar valor a través del análisis de datos y continuar desarrollándome en el área.'
           ]
         }
 

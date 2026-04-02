@@ -49,8 +49,8 @@ function Navbar({ theme, onThemeChange, language = 'es', onLanguageChange }) {
 
   const handleDownloadCV = () => {
     const link = document.createElement('a');
-    link.href = '/Juan-Gabriel-Pared-Developer-CV.pdf';
-    link.download = 'Juan-Gabriel-Pared-Developer-CV.pdf';
+    link.href = '/Juan-Gabriel-Pared-Analista-Datos.pdf';
+    link.download = 'Juan-Gabriel-Pared-Analista-Datos.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);

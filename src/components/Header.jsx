@@ -9,18 +9,22 @@ function Header({ language = 'es' }) {
       ? {
           alt: "Juan Gabriel Pared's profile photo",
           h1: 'Juan Gabriel Pared',
-          subtitle: 'University Technician in Programming · Front-End Developer',
+          subtitle: 'University Technician in Programming · Jr. Data Analyst',
           location: 'Corrientes, Argentina',
-          description:
-            'I develop modern, attractive, and user-centered web interfaces using technologies such as React. I specialize in creating functional, intuitive, and visually professional applications for real-world projects.'
+          description: [
+            'I focus on the analysis, processing, and visualization of data for decision-making. I have a solid foundation in programming and databases, which allows me to handle information in a structured and efficient way.',
+            'I work with tools like SQL, Excel, and Power BI to transform data into clear and useful insights, applied to real-world contexts.'
+          ]
         }
       : {
           alt: 'Foto de presentación de Juan Gabriel Pared',
           h1: 'Juan Gabriel Pared',
-          subtitle: 'Técnico Universitario en Programación · Front-End Developer',
+          subtitle: 'Técnico Universitario en Programación · Data Analyst Jr.',
           location: 'Corrientes, Argentina',
-          description:
-            'Desarrollo interfaces web modernas enfocadas en la experiencia de usuario mediante tecnologías como React. Me especializo en construir aplicaciones funcionales, intuitivas y con estándares de diseño profesional, aplicadas a proyectos reales.'
+          description: [
+            'Me enfoco en el análisis y visualización de datos para la toma de decisiones, con base en programación y bases de datos.',
+            'Trabajo con SQL, Excel y Power BI para transformar datos en insights claros y útiles.'
+          ]
         }
 
   return (
@@ -101,7 +105,11 @@ function Header({ language = 'es' }) {
               </svg>
             </a>
           </div>
-          <p className="hero-description">{content.description}</p>
+          <div className="hero-description">
+            {content.description.map((para, i) => (
+              <p key={i}>{para}</p>
+            ))}
+          </div>
           <div className="hero-actions">
             <DownloadCVButton language={language} />
           </div>
