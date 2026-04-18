@@ -22,8 +22,8 @@ function Header({ language = 'es' }) {
           subtitle: 'Técnico Universitario en Programación · Data Analyst Jr.',
           location: 'Corrientes, Argentina',
           description: [
-            'Me enfoco en el análisis y visualización de datos para la toma de decisiones, con base en programación y bases de datos.',
-            'Trabajo con SQL, Excel y Power BI para transformar datos en insights claros y útiles.'
+            'Me enfoco en el análisis y automatización de datos para la toma de decisiones, con base en programación y bases de datos.',
+            'Trabajo con SQL, Excel y Power BI para generar insights claros, incorporando automatización mediante APIs y herramientas como n8n y Make.'
           ]
         }
 

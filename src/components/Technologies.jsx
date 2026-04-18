@@ -127,6 +127,40 @@ const ICONS = {
       </svg>
     )
   },
+  workflow: {
+    type: 'svg',
+    svg: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="6" cy="7" r="2" />
+        <circle cx="18" cy="7" r="2" />
+        <circle cx="12" cy="17" r="2" />
+        <path d="M8 7h8" />
+        <path d="M12 9v6" />
+      </svg>
+    )
+  },
+  api: {
+    type: 'svg',
+    svg: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="3" y="7" width="18" height="10" rx="2" />
+        <path d="M7 7v10" />
+        <path d="M17 7v10" />
+        <path d="M3 12h18" />
+      </svg>
+    )
+  },
+  ai: {
+    type: 'svg',
+    svg: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M6 3h12a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V6a3 3 0 0 1 3-3z" />
+        <path d="M8 9h8" />
+        <path d="M8 15h8" />
+        <path d="M12 9v6" />
+      </svg>
+    )
+  },
   mysql: { type: 'img', src: `${DEVICON_BASE}/mysql/mysql-original.svg` }
 }
 
@@ -154,6 +188,16 @@ const TECH_GROUPS = [
       { id: 'sql', label: 'SQL' },
       { id: 'excel', label: 'Excel' },
       { id: 'powerbi', label: 'Power BI' }
+    ]
+  },
+  {
+    id: 'automation',
+    titleEs: 'Automatización & IA',
+    titleEn: 'Automation & AI',
+    items: [
+      { id: 'workflow', label: 'Workflows (n8n · Make)' },
+      { id: 'api', label: 'APIs e integraciones' },
+      { id: 'ai', label: 'AI Automation (Claude)' }
     ]
   },
   {

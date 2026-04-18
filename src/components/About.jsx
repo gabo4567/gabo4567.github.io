@@ -10,6 +10,8 @@ const ABOUT_HIGHLIGHTS_ES = [
   'bases de datos',
   'análisis, procesamiento y visualización de datos',
   'SQL, Excel y Power BI',
+  'n8n',
+  'Make',
   'Data Analyst Jr.',
   'primera oportunidad profesional'
 ]
@@ -53,9 +55,9 @@ function About({ language = 'es' }) {
           title: 'Sobre mí',
           items: [
             'Técnico Universitario en Programación egresado de la Universidad Tecnológica Nacional (UTN), con formación en desarrollo de software y bases de datos.',
-            'Cuento con experiencia en desarrollo de software full stack, participando en la construcción de aplicaciones web y móviles, diseño de APIs y manejo de bases de datos, lo que me permite comprender y trabajar la información de forma estructurada y eficiente.',
-            'Enfocado en el análisis, procesamiento y visualización de datos para la toma de decisiones, utilizando herramientas como SQL, Excel y Power BI.',
-            'Busco mi primera oportunidad profesional como Data Analyst Jr., donde pueda aportar valor a través del análisis de datos y continuar desarrollándome en el área.'
+            'Cuento con experiencia en desarrollo full stack, participando en la construcción de aplicaciones web y móviles, diseño de APIs y manejo de bases de datos, lo que me permite trabajar la información de forma estructurada y eficiente.',
+            'Actualmente enfocado en el análisis, procesamiento y automatización de datos para la toma de decisiones, utilizando herramientas como SQL, Excel y Power BI, e incorporando integraciones y workflows con herramientas como n8n y Make.',
+            'Busco mi primera oportunidad profesional como Data Analyst Jr., donde pueda aportar valor a través del análisis de datos y la automatización de procesos, y continuar desarrollándome en el área.'
           ]
         }
 
