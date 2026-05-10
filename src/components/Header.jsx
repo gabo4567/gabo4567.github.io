@@ -19,11 +19,11 @@ function Header({ language = 'es' }) {
       : {
           alt: 'Foto de presentación de Juan Gabriel Pared',
           h1: 'Juan Gabriel Pared',
-          subtitle: 'Técnico Universitario en Programación · Data Analyst Jr.',
+          subtitle: 'Técnico Universitario en Programación · Full Stack Developer Jr.',
           location: 'Corrientes, Argentina',
           description: [
-            'Me enfoco en el análisis y automatización de datos para la toma de decisiones, con base en programación y bases de datos.',
-            'Trabajo con SQL, Excel y Power BI para generar insights claros, incorporando automatización mediante APIs y herramientas como n8n y Make.'
+            'Me enfoco en el desarrollo full stack y en la automatización de procesos con IA, con base en programación y bases de datos.',
+            'Trabajo con SQL, APIs y soluciones web para crear experiencias funcionales, incorporando automatización con n8n y Make.'
           ]
         }
 

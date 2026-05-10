@@ -2,17 +2,26 @@ import { Fragment } from 'react'
 import './About.css'
 
 const ABOUT_HIGHLIGHTS_ES = [
-  'Programación',
-  'análisis de datos',
-  'desarrollo de software full stack',
+  'Técnico Universitario en Programación',
+  'Universidad Tecnológica Nacional (UTN)',
+  'desarrollo de software',
+  'arquitectura de aplicaciones',
+  'desarrollo full stack',
   'aplicaciones web y móviles',
   'diseño de APIs',
+  'lógica de backend',
   'bases de datos',
-  'análisis, procesamiento y visualización de datos',
-  'SQL, Excel y Power BI',
+  'frontend, backend y persistencia de datos',
+  'aplicaciones escalables',
+  'integración de sistemas',
+  'automatización de procesos',
+  'React',
+  'Node.js',
+  'SQL',
+  'Firebase',
   'n8n',
   'Make',
-  'Data Analyst Jr.',
+  'Full Stack Developer Jr.',
   'primera oportunidad profesional'
 ]
 
@@ -54,10 +63,10 @@ function About({ language = 'es' }) {
       : {
           title: 'Sobre mí',
           items: [
-            'Técnico Universitario en Programación egresado de la Universidad Tecnológica Nacional (UTN), con formación en desarrollo de software y bases de datos.',
-            'Cuento con experiencia en desarrollo full stack, participando en la construcción de aplicaciones web y móviles, diseño de APIs y manejo de bases de datos, lo que me permite trabajar la información de forma estructurada y eficiente.',
-            'Actualmente enfocado en el análisis, procesamiento y automatización de datos para la toma de decisiones, utilizando herramientas como SQL, Excel y Power BI, e incorporando integraciones y workflows con herramientas como n8n y Make.',
-            'Busco mi primera oportunidad profesional como Data Analyst Jr., donde pueda aportar valor a través del análisis de datos y la automatización de procesos, y continuar desarrollándome en el área.'
+            'Técnico Universitario en Programación egresado de la Universidad Tecnológica Nacional (UTN), con formación en desarrollo de software, bases de datos y arquitectura de aplicaciones.',
+            'Cuento con experiencia en desarrollo full stack, participando en la construcción de aplicaciones web y móviles, diseño de APIs, lógica de backend y manejo de bases de datos, lo que me permite desarrollar soluciones completas de principio a fin, asegurando coherencia entre frontend, backend y persistencia de datos.',
+            'Actualmente enfocado en el desarrollo de aplicaciones escalables, la integración de sistemas y la automatización de procesos dentro de entornos web, utilizando tecnologías como React, Node.js, SQL y Firebase, además de herramientas de workflow como n8n y Make.',
+            'Busco mi primera oportunidad profesional como Full Stack Developer Jr., donde pueda aportar valor en el desarrollo de productos completos, la optimización de sistemas y la construcción de soluciones eficientes y mantenibles.'
           ]
         }
 
