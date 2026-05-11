@@ -9,11 +9,11 @@ function Header({ language = 'es' }) {
       ? {
           alt: "Juan Gabriel Pared's profile photo",
           h1: 'Juan Gabriel Pared',
-          subtitle: 'University Technician in Programming · Jr. Data Analyst',
+          subtitle: 'University Technician in Programming · Jr. Full Stack Developer',
           location: 'Corrientes, Argentina',
           description: [
-            'I focus on the analysis, processing, and visualization of data for decision-making. I have a solid foundation in programming and databases, which allows me to handle information in a structured and efficient way.',
-            'I work with tools like SQL, Excel, and Power BI to transform data into clear and useful insights, applied to real-world contexts.'
+            'I focus on full stack development and AI process automation, with a foundation in programming and databases.',
+            'I work with SQL, APIs, and web solutions to build functional experiences, incorporating automation with n8n and Make.'
           ]
         }
       : {

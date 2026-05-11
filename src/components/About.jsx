@@ -25,6 +25,30 @@ const ABOUT_HIGHLIGHTS_ES = [
   'primera oportunidad profesional'
 ]
 
+const ABOUT_HIGHLIGHTS_EN = [
+  'University Technician in Programming',
+  'National Technological University (UTN)',
+  'software development',
+  'application architecture',
+  'full stack development',
+  'web and mobile applications',
+  'API design',
+  'backend logic',
+  'databases',
+  'frontend, backend, and data persistence',
+  'scalable applications',
+  'systems integration',
+  'process automation',
+  'React',
+  'Node.js',
+  'SQL',
+  'Firebase',
+  'n8n',
+  'Make',
+  'Jr. Full Stack Developer',
+  'first professional opportunity'
+]
+
 function escapeRegExp(text) {
   return text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
 }
@@ -53,15 +77,17 @@ function About({ language = 'es' }) {
     language === 'en'
       ? {
           title: 'About',
+          highlights: ABOUT_HIGHLIGHTS_EN,
           items: [
-            'University Technician in Programming from UTN, focused on data analysis.',
-            'I have experience in full stack software development, building web and mobile applications, designing APIs, and managing databases, which allows me to understand and handle data in a structured and efficient way.',
-            'Focused on the analysis, processing, and visualization of data for decision-making, using tools like SQL, Excel, and Power BI.',
-            "I'm looking for my first professional opportunity as a Jr. Data Analyst, where I can add value through data analysis and continue growing in the field."
+            'University Technician in Programming graduated from the National Technological University (UTN), with training in software development, databases, and application architecture.',
+            'I have experience in full stack development, contributing to the construction of web and mobile applications, API design, backend logic, and database management. This allows me to build complete solutions from end to end, ensuring consistency between frontend, backend, and data persistence.',
+            'I am currently focused on building scalable applications, systems integration, and process automation in web environments, using technologies such as React, Node.js, SQL, and Firebase, as well as workflow tools like n8n and Make.',
+            "I'm looking for my first professional opportunity as a Jr. Full Stack Developer, where I can add value in the development of complete products, system optimization, and the construction of efficient, maintainable solutions."
           ]
         }
       : {
           title: 'Sobre mí',
+          highlights: ABOUT_HIGHLIGHTS_ES,
           items: [
             'Técnico Universitario en Programación egresado de la Universidad Tecnológica Nacional (UTN), con formación en desarrollo de software, bases de datos y arquitectura de aplicaciones.',
             'Cuento con experiencia en desarrollo full stack, participando en la construcción de aplicaciones web y móviles, diseño de APIs, lógica de backend y manejo de bases de datos, lo que me permite desarrollar soluciones completas de principio a fin, asegurando coherencia entre frontend, backend y persistencia de datos.',
@@ -77,9 +103,7 @@ function About({ language = 'es' }) {
         <ul className="about-list">
           {content.items.map((item, index) => (
             <li key={index} className="about-item">
-              {language === 'es'
-                ? highlightText(item, ABOUT_HIGHLIGHTS_ES)
-                : item}
+              {highlightText(item, content.highlights)}
             </li>
           ))}
         </ul>

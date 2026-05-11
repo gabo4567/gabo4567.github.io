@@ -120,11 +120,11 @@ export default function Education({ language = 'es' }) {
               note: 'Academic average: 8.7/10'
             },
             {
-              period: '2025',
-              title: 'Graduation',
+              period: 'Feb 2026',
+              title: 'Academic Graduation',
               paragraphs: [
-                'Graduated as a University Technician in Programming, with a strong foundation in robust, maintainable, and scalable software development.',
-                'I am currently looking for my first professional opportunity in IT, aiming to join development teams, add value from day one, and continue my professional growth.'
+                'Graduated from the National Technological University – Resistencia Regional Faculty, with solid training in robust, maintainable, and scalable software development.',
+                'I am currently looking for my first professional opportunity in IT, aiming to join development teams and add value from day one.'
               ]
             }
           ]
